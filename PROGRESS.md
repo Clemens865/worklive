@@ -4,8 +4,8 @@ Shared between Codex and Claude Code. Newest entry first. Rules and project map:
 
 ## Current state (keep this block up to date)
 
-- **Version:** 0.9.0 — installed at `outputs/Worklive.app` (debug build 2026-10-01 20:34, installed 2026-10-01); 0.8.0 app kept in `work/v08-app-backup/`
-- **Tests:** `npm run check` 67/67 JS (43 worker + 24 office) · `cargo test` 35/35 Rust, 2 live tests ignored
+- **Version:** 0.9.0 — installed at `build/Worklive.app` (debug build 2026-10-01 20:34, installed 2026-10-01); 0.8.0 app kept in `archive/work/v08-app-backup/`
+- **Tests:** `npm run check` 67/67 JS (43 worker + 24 office) · `cargo test` 36/36 Rust, 2 live tests ignored
 - **Status:** polish phase — Comic style chosen; overlaps fixed (crowd + poses), bigger office, subagent helpers — all in `work/visual-mocks/`, not yet ported to the app
 - **Last editor:** Claude Code — 0.9.0 port done; added the optional **Deck 7** office look (2026-10-03, see newest entry). Debug bundle built, not installed yet.
 - **Codex engine research:** complete; lightweight rendering is mandatory. Current recommendation: retain Three.js for the chosen Comic style and profile it in Tauri before considering migration. PlayCanvas remains an isolated comparison prototype; no measured engine advantage established. Unity/Unreal/Higgsfield researched; no engine migration started.
@@ -26,6 +26,15 @@ Shared between Codex and Claude Code. Newest entry first. Rules and project map:
 7. Not yet: signing/notarization, multi-file handoffs, autonomous delegation, Word/PDF generation.
 
 ---
+
+
+## 2026-10-20 — Claude Code: moved to ~/Documents/Software-Projects/Worklive + private git repo
+
+- Workspace moved from `~/Documents/Codex/2026-09-30/i-w` (old folder kept, with `MOVED.md`). New layout: `app/` (was `outputs/worklive/`), `build/Worklive.app`, `docs/` (PRDs), `design/` (concepts, prototypes, videos, screenshots), `archive/work/` (was `work/`). Older entries below use the old paths.
+- Private GitHub repo: https://github.com/Clemens865/worklive (personal project, not a product). Not committed: `build/`, dependencies, `archive/work/*-data-backup/` (personal agent data).
+- Dependencies reinstalled in `app/` and `app/worker/`. `npm run check` 67/67 (43 worker + 24 office), `cargo test` 36 passed, 2 ignored.
+- User data stays in `~/Library/Application Support/com.worklive.prototype/` — unaffected by the move.
+- Stopped the old `npm run web` dev server (port 1432) that ran from the old folder.
 
 ## Entry template
 
