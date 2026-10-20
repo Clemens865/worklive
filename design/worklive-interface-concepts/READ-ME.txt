@@ -1,0 +1,80 @@
+WORKLIVE — INTERACTION STUDIES
+Six revised concepts, 1 October 2026
+
+These are on-screen interaction metaphors, not proposed physical hardware.
+All images are generated design studies; browser content, tasks, timestamps,
+statistics and example results in them are illustrative. They do not demonstrate
+implemented interactions, real agent activity, measured performance or verified
+research. The existing backend and Claude's ongoing app work were not changed.
+
+The first exploration was too close to ordinary dashboards. The user rejected
+that approach during generation. The six PNGs in this directory form the revised
+set; previous output is kept separately under superseded-dashboard-studies.
+
+1. SCREEN KEYS
+Image: 01-screen-keys.png
+Interaction: Press an agent's display-key to pull its workspace into focus. Drop a file onto the key to attach context.
+Useful for: A distinctive home surface that makes switching agents feel immediate.
+Design constraint: The key is a live thumbnail; reading and interacting happens in the expanded screen.
+
+2. SCREEN LANDSCAPE
+Image: 02-screen-landscape.png
+Interaction: Pull any agent's screen forward to work with it; push it back to restore the overview. Snap two screens together for comparison.
+Useful for: Seeing actual work while preserving a clear primary focus.
+Design constraint: Use a fixed camera and flat screen layers; a navigable 3D room would reintroduce the original problem.
+
+3. TASK PUCKS
+Image: 03-task-pucks.png
+Interaction: Place an agent puck onto a task sheet to assign it, add source cards, then press Start. Lift the puck to inspect its workspace.
+Useful for: Making assignment, ownership and shared context tangible.
+Design constraint: Needs accessible keyboard equivalents and clear drop targets.
+
+4. AGENT CARTRIDGES
+Image: 04-agent-cartridges.png
+Interaction: Each agent is a persistent cartridge. Insert it into a project dock, attach context chips, and open its display to inspect work.
+Useful for: Making agent identity, reusable roles and project scope easy to understand.
+Design constraint: The metaphor must remain a shortcut to clear controls, rather than add extra steps.
+
+5. FOCUS ORBIT
+Image: 05-focus-orbit.png
+Interaction: Choose an agent on the ring to bring its work into the center. Place files and memory tokens on the inner ring to prepare context, then start explicitly.
+Useful for: One focused workspace with the entire team a single gesture away.
+Design constraint: Keep the ring stationary unless the user moves it; constant orbiting would be distracting.
+
+6. WORK RIBBONS
+Image: 06-work-ribbons.png
+Interaction: Pull out an agent's ribbon of work to inspect sources, browser captures and results. Open any frame at full size and review a result before passing it on.
+Useful for: Understanding a result's history without reading a long log.
+Design constraint: Store selected events and captures with clear timestamps, not continuous video.
+
+RECOMMENDATION
+Screen Keys is the closest to the original electronic-keyboard idea and offers
+a distinctive way to enter an agent's workspace. Task Pucks makes assignment
+and context tangible. Screen Landscape is a useful focus/compare view. These
+are design judgments, not a tested usability ranking.
+
+IMPLEMENTATION PRINCIPLES FOR A LATER PROTOTYPE
+- Keep work initiation explicit. Assigning an agent or attaching context does
+  not silently start a task.
+- Preserve the two official CLI providers, personal/project/company memory
+  isolation, scoped context files and human review of results and handoffs.
+- Codex identity stays teal #2D9D8F; Claude Code stays terracotta #D97757.
+  State indicators remain separate. If character avatars return, their shirts
+  keep the same provider colors.
+- Opening a screen needs to distinguish a current browser view from saved
+  captures. Historical captures must carry timestamps.
+- Evaluate shallow CSS/canvas layers and static rendered assets for the tactile
+  look before adding real-time 3D rendering. Do not infer runtime cost from these
+  still images. Profile a prototype before claiming it is lightweight.
+- Retain click and keyboard equivalents for drag gestures, clear drop targets,
+  and a flat focused screen for reading and interacting.
+- Idle agents need not retain running browsers or continuously refresh previews.
+- The existing backend can be reused in principle, but direct manipulation,
+  gesture handling and some history/queue interactions need implementation
+  and validation. No new backend capacity is established by these drawings.
+
+GENERATED WITH
+Built-in image_gen tool. Exact final generation prompts are saved in
+interaction-studies-prompts.json. Image paths and provenance:
+image-manifest.json.
+

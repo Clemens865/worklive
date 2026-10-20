@@ -1,0 +1,8 @@
+{
+  "name": "worklive-playcanvas-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node server.mjs", "check": "node --check app.mjs && node --check server.mjs && node --check simulation.mjs && node --test tests/*.test.mjs" },
+  "dependencies": { "playcanvas": "2.22.6", "playwright-core": "1.61.0" }
+}

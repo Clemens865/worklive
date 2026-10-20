@@ -1,0 +1,22 @@
+[
+  {
+    "id": "01-team-overview",
+    "prompt": "Edit this image with STRICT minimal text replacements only. Preserve every screen, nameplate, spatial arrangement, lighting, color and layout exactly. Heiko's back-row screen currently says 'Exploring ideas autonomously' under Idle; REPLACE that subtitle with 'Ready when you are'. Iris's back-row subtitle 'Context gathered' must become 'No task running'. Juno's front-row 'Waiting for input' subtitle must become 'Ready when you are'. Noor's front-row question text must become 'New users or administrators?' and its small field placeholder must become 'Your answer…'. Do not add tasks or agents, do not imply idle agents are working. Keep all existing provider assignments, the two Working agents Ada and Milo, and all other statuses. No other changes."
+  },
+  {
+    "id": "02-agent-workspace",
+    "prompt": "Edit this image with minimal status text changes ONLY on the small BACKGROUND agent sheets. Leave the entire large foreground Ada browser workspace and all layout, color, lighting, typography and controls unchanged. Background Milo (far left, Claude Code) status must read 'Working'. Background Lena (next left, Claude Code) status must read 'Ready for review'. Background Sam (right, Codex) status must read 'Paused'. Background Juno (far right, Claude Code) status must read 'Idle'. Noor remains 'Needs your answer'. Only Ada/Codex and Milo/Claude Code are Working. Do not change provider labels, names, main browser content or add elements. Preserve dimensions."
+  },
+  {
+    "id": "05-project-space",
+    "prompt": "Make only these precise corrections to this Worklive project-space image, preserving the floating-sheet layout, lighting, form, all documents and other content. 1) In the Accepted column replace subtitle 'Complete and handed off.' with 'Reviewed and accepted.' Acceptance does not mean a handoff has happened. 2) In the Planned column, the top task Juno / Claude Code has a Start button; make that button visually disabled pale grey and add small 'Claude Code busy' text beside/below it, because Milo is currently using that provider. 3) The upper project team row should include all six participating agents: Ada/Codex, Milo/Claude Code, Lena/Claude Code, Noor/Codex, Sam/Codex, Juno/Claude Code. Fit six smaller name chips in the existing row without crowding. 4) Change the outer perimeter lines of all five task-state COLUMN sheets to the same quiet neutral slate-grey, retaining teal/terracotta only on individual agent identities, not on whole state columns. Do not change any other elements or add new screens."
+  },
+  {
+    "id": "06-memory-library",
+    "prompt": "Edit this image with only identity/scope corrections. Preserve the composition, all main note text, file controls, timestamps, shadows, shapes, and all other content. The side leaf 'Personal · Ada' belongs to Ada/Codex: change its perimeter and A monogram background from terracotta to teal #2D9D8F, keeping its correct Ada / Codex nameplate. The central Project library is provider-independent: change its outer perimeter and bottom nameplate dot to neutral slate grey, keeping 'Project memory'. The right Company library is shared across BOTH providers: replace its incorrect bottom nameplate 'Company / Claude Code' with simply 'Company memory', using a neutral slate-grey dot; change right Company outer border and C monogram to the same neutral slate-grey, NOT terracotta or teal. Keep amber '1 proposal to review'. Never label a knowledge scope as if it belongs to a model provider. Also remove the tiny promotional slogans in the outer lower corners, leaving blank space. No other changes."
+  },
+  {
+    "id": "08-reviewed-handoff",
+    "prompt": "Edit this Worklive handoff image with two exact corrections, preserve all layout, forms, shadows, typography, background, and both side agent sheets. The middle approval sheet is the HUMAN review step, not an agent. Replace its bottom nameplate 'Ada / Codex' with 'Review sharing', using a neutral slate-grey dot. Change only the middle sheet's teal outer border to neutral slate-grey. Leave left Lena / Claude Code terracotta and right Sam / Codex teal unchanged. Keep the consent checkbox unchecked, Queue handoff task disabled, and all existing single-file/manual-start text. In the file preview replace the final ellipsis with a small underlined 'Read full file' link so the complete reviewed content is accessible. No added third agent, no auto sharing, no other changes."
+  }
+]

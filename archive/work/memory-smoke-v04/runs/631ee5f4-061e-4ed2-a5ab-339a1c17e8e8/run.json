@@ -1,0 +1,197 @@
+{
+  "id": "631ee5f4-061e-4ed2-a5ab-339a1c17e8e8",
+  "agentId": "memory-test",
+  "provider": "claude",
+  "task": "Read the local Atlas checklist saved by the previous provider using context tools, plus the company handbook. Save handoff.md with the studio name, delivery day, and private review word. Cite both exact source titles and versions. Do not browse or create new memory.",
+  "status": "review",
+  "message": "Ready for review. The result and source evidence are saved locally.",
+  "text": "I saved `handoff.md`. It lists these values and where each one came from:\n\n- **Studio name: Lumen Orchard.** Source: **Company handbook**, revision 1, Note · lines 1–1.\n- **Delivery day: Thursday.** Source: **Atlas checklist**, revision 1, Note · lines 1–4.\n- **Private review word: Juniper-418.** Source: **Atlas checklist**, revision 1, Note · lines 1–4.\n\nOne thing to keep in mind: the delivery day and review word come from the previous provider's checklist. That checklist cites two earlier sources: \"Atlas delivery\" (revision 1) and `atlas-reference.txt` (revision 1). I didn't read those two again, as your instructions asked, so I haven't checked that the checklist matches them.\n\nThe review word comes from private notes, so keep `handoff.md` private. I didn't browse and didn't create any new memory.",
+  "startedAt": 1790768207807,
+  "endedAt": 1790768225185,
+  "sessionId": "09ecbf7a-1978-46a2-940a-4df0a8d0f6f9",
+  "model": "claude-opus-5-5",
+  "version": "2.1.285 (Claude Code)",
+  "events": [
+    {
+      "at": 1790768208387,
+      "message": "Claude Code is working through your subscription."
+    },
+    {
+      "at": 1790768211508,
+      "message": "Reading local context"
+    },
+    {
+      "at": 1790768214437,
+      "message": "Reading local context"
+    },
+    {
+      "at": 1790768214604,
+      "message": "Reading local context"
+    },
+    {
+      "at": 1790768221259,
+      "message": "Saving handoff.md"
+    },
+    {
+      "at": 1790768225186,
+      "message": "Ready for review. The result and source evidence are saved locally."
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "handoff.md",
+      "path": "/Users/clemenshoenig/Documents/Codex/2026-09-30/i-w/work/memory-smoke-v04/runs/631ee5f4-061e-4ed2-a5ab-339a1c17e8e8/outputs/handoff.md",
+      "bytes": 1272,
+      "hash": "d96b0db097ece1490e4aa28ec2d2c82be610435429691baedc70e762bfe061e1",
+      "at": 1790768221262
+    },
+    {
+      "name": "response.md",
+      "path": "/Users/clemenshoenig/Documents/Codex/2026-09-30/i-w/work/memory-smoke-v04/runs/631ee5f4-061e-4ed2-a5ab-339a1c17e8e8/outputs/response.md",
+      "bytes": 819,
+      "hash": "a4900e54e5465b510a03a84c6cbb0adeaaa8c3e8060bb2e1ae7f4f8147abfca2",
+      "at": 1790768225185
+    }
+  ],
+  "sources": [],
+  "actions": 4,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 7748,
+    "cache_read_input_tokens": 18242,
+    "output_tokens": 1248,
+    "output_tokens_details": {
+      "thinking_tokens": 24
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 7748,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "previousRunId": "dde01004-1789-4144-a6ef-44d3ed508db4",
+  "contextKey": "6",
+  "contextUsed": [
+    {
+      "excerpt": "The studio name is Lumen Orchard. Its writing principle is Plain language first.",
+      "id": "43fb4914-778c-405d-85e9-417a5c941d83",
+      "locator": "Note",
+      "part": 0,
+      "revision": 1,
+      "scope": "company",
+      "title": "Company handbook"
+    },
+    {
+      "excerpt": "Atlas delivery day: Thursday. Private review word: Juniper-418.\nDelivery source: Atlas delivery, ID 8aecd4dc-f222-4815-9436-2fa057a3f95b, revision 1, Note · lines 1–1 (part 0; project scope).\nReview word source: atlas-reference.txt, ID 1686e773-71a5-4105-adfe-829e79b16e50, revision 1, Text · lines 1–2 (part 0; agent/private scope).\n",
+      "id": "565f5b36-7f48-4ba6-a0c5-fb354f1e3086",
+      "kind": "note",
+      "locator": "Note · lines 1–4",
+      "part": 0,
+      "revision": 1,
+      "scope": "agent",
+      "title": "Atlas checklist"
+    },
+    {
+      "excerpt": "The Atlas delivery day is Thursday. The budget has not been decided.\n",
+      "id": "8aecd4dc-f222-4815-9436-2fa057a3f95b",
+      "kind": "note",
+      "locator": "Note · lines 1–1",
+      "part": 0,
+      "revision": 1,
+      "scope": "project",
+      "title": "Atlas delivery"
+    },
+    {
+      "excerpt": "Atlas reference\nThe private review word is Juniper-418. The preferred report length is 90 words.\n",
+      "id": "1686e773-71a5-4105-adfe-829e79b16e50",
+      "kind": "file",
+      "locator": "Text · lines 1–2",
+      "part": 0,
+      "revision": 1,
+      "scope": "agent",
+      "title": "atlas-reference.txt"
+    },
+    {
+      "author": "You",
+      "createdAt": 1790768146982,
+      "id": "43fb4914-778c-405d-85e9-417a5c941d83",
+      "kind": "note",
+      "pinned": true,
+      "preview": "The studio name is Lumen Orchard. Its writing principle is Plain language first.",
+      "provider": "",
+      "revision": 1,
+      "scope": "company",
+      "scopeId": "company",
+      "source": "",
+      "sourceRun": "",
+      "status": "published",
+      "title": "Company handbook",
+      "updatedAt": 1790768146982,
+      "warning": ""
+    },
+    {
+      "author": "memory-test",
+      "createdAt": 1790768200261,
+      "id": "565f5b36-7f48-4ba6-a0c5-fb354f1e3086",
+      "kind": "note",
+      "pinned": false,
+      "preview": "Atlas delivery day: Thursday. Private review word: Juniper-418.\n\nDelivery source: Atlas delivery, ID 8aecd4dc-f222-4815-9436-2fa057a3f95b, revision 1, Note · lines 1–1 (part 0; pro",
+      "provider": "codex",
+      "revision": 1,
+      "scope": "agent",
+      "scopeId": "memory-test|ad34b508-2de9-41f9-8e11-d4b52f3b3281",
+      "source": "Atlas delivery | ID 8aecd4dc-f222-4815-9436-2fa057a3f95b | revision 1 | Note · lines 1–1 | part 0; atlas-reference.txt | ID 1686e773-71a5-4105-adfe-829e79b16e50 | revision 1 | Text · lines 1–2 | part 0",
+      "sourceRun": "dde01004-1789-4144-a6ef-44d3ed508db4",
+      "status": "published",
+      "title": "Atlas checklist",
+      "updatedAt": 1790768200261,
+      "warning": ""
+    },
+    {
+      "author": "You",
+      "createdAt": 1790768146985,
+      "id": "1686e773-71a5-4105-adfe-829e79b16e50",
+      "kind": "file",
+      "pinned": false,
+      "preview": "Atlas reference\nThe private review word is Juniper-418. The preferred report length is 90 words.\n",
+      "provider": "",
+      "revision": 1,
+      "scope": "agent",
+      "scopeId": "memory-test",
+      "source": "atlas-reference.txt",
+      "sourceRun": "",
+      "status": "published",
+      "title": "atlas-reference.txt",
+      "updatedAt": 1790768146985,
+      "warning": ""
+    },
+    {
+      "author": "You",
+      "createdAt": 1790768146984,
+      "id": "8aecd4dc-f222-4815-9436-2fa057a3f95b",
+      "kind": "note",
+      "pinned": false,
+      "preview": "The Atlas delivery day is Thursday. The budget has not been decided.",
+      "provider": "",
+      "revision": 1,
+      "scope": "project",
+      "scopeId": "ad34b508-2de9-41f9-8e11-d4b52f3b3281",
+      "source": "",
+      "sourceRun": "",
+      "status": "published",
+      "title": "Atlas delivery",
+      "updatedAt": 1790768146984,
+      "warning": ""
+    }
+  ],
+  "memoriesAdded": [],
+  "freshContext": true
+}

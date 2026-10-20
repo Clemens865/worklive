@@ -1,0 +1,33 @@
+{
+  "id": "46ef5d95-5fa3-4d8a-84aa-1d28d3a11f8b",
+  "agentId": "test-codex",
+  "provider": "codex",
+  "task": "Open https://example.com using the Worklive browser. Read it. Save example-summary.md with a two-sentence summary and its exact source URL. Do not follow further links.",
+  "status": "paused",
+  "message": "Paused while you use the browser. Return control, then choose Resume task.",
+  "text": "",
+  "startedAt": 1790762329977,
+  "endedAt": 1790762330086,
+  "sessionId": "01a0f1bf-334a-7272-ac9b-ebf933cea671",
+  "model": null,
+  "version": "codex-cli 0.159.0",
+  "events": [
+    {
+      "at": 1790762330029,
+      "message": "Codex is working through your subscription."
+    },
+    {
+      "at": 1790762330082,
+      "message": "Pausing the task…"
+    },
+    {
+      "at": 1790762330086,
+      "message": "Paused while you use the browser. Return control, then choose Resume task."
+    }
+  ],
+  "artifacts": [],
+  "sources": [],
+  "actions": 0,
+  "usage": null,
+  "previousRunId": "b0dec390-7eb2-4ba5-90c2-5c897272b275"
+}

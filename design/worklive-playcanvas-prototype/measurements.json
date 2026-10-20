@@ -1,0 +1,76 @@
+{
+  "hardware": "Apple M1 Pro, 16 GB unified memory",
+  "browser": "Codex in-app browser",
+  "testViewport": [
+    1280,
+    900
+  ],
+  "notes": [
+    "Short indicative measurements, not a controlled comparison with the earlier Three.js studies.",
+    "Other browser/rendering work was active on the Mac. The initial browser-on slowdown is retained below; do not infer that all variation came from texture/capture changes.",
+    "No packaged Tauri or real CLI task performance measured."
+  ],
+  "finalOfficeOnly": {
+    "frames": 900,
+    "fps": 59.94924297409136,
+    "p95": 17.700000047683716,
+    "over50": 0,
+    "people": 20,
+    "livePages": 0,
+    "mode": "smooth",
+    "viewport": [
+      969,
+      637
+    ],
+    "drawCalls": 55,
+    "triangles": 74340,
+    "durationMs": 15012.700000047684,
+    "engine": "2.22.6",
+    "measuredAt": "2026-09-30T20:42:15.969Z",
+    "scope": "Browser rendering and optional scripted preview only; no CLI tasks or packaged Tauri"
+  },
+  "finalWithBrowserPreviews": {
+    "frames": 900,
+    "fps": 60.00360021544069,
+    "p95": 17.600000143051147,
+    "over50": 0,
+    "people": 20,
+    "livePages": 2,
+    "mode": "smooth",
+    "viewport": [
+      969,
+      637
+    ],
+    "drawCalls": 55,
+    "triangles": 74340,
+    "durationMs": 14999.100000143051,
+    "engine": "2.22.6",
+    "measuredAt": "2026-09-30T20:43:18.012Z",
+    "scope": "Browser rendering and optional scripted preview only; no CLI tasks or packaged Tauri"
+  },
+  "earlierFullResolutionPreviewRun": {
+    "frames": 141,
+    "fps": 9.446603242663809,
+    "p95": 279.89999985694885,
+    "over50": 95,
+    "people": 20,
+    "livePages": 2,
+    "mode": "smooth",
+    "viewport": [
+      969,
+      637
+    ],
+    "drawCalls": 55,
+    "triangles": 74340,
+    "durationMs": 14926,
+    "engine": "2.22.6",
+    "measuredAt": "2026-09-30T20:37:57.525Z",
+    "scope": "Browser rendering and optional scripted preview only; no CLI tasks or packaged Tauri"
+  },
+  "laterUncontrolledObservation": {
+    "reportedRollingFps": 9,
+    "p95Ms": 259.8,
+    "livePages": 0,
+    "note": "Later rolling UI observation with other rendering/browser work active. Not a fixed-duration benchmark. Sustained smoothness and the cause of the intermittent drops remain unverified."
+  }
+}

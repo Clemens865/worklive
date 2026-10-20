@@ -1,0 +1,19 @@
+# Ruflo local secrets and runtime data
+.env
+.env.local
+.env.*.local
+.claude-flow/data/
+.claude-flow/logs/
+.claude-flow/sessions/
+
+# Dependencies and build output (rebuild with npm run setup / npm run build)
+node_modules/
+dist/
+src-tauri/target/
+build/
+archive/work/v08-app-backup/
+*.log
+.DS_Store
+
+# Personal app data (copies of ~/Library/Application Support/com.worklive.prototype)
+archive/work/*-data-backup/

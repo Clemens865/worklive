@@ -1,0 +1,39 @@
+{
+  "runId": "d2944dcf-ef9a-4fe6-b3cb-2fcd89c6b4d7",
+  "taskId": "681f3d39-3e41-4a1a-9c90-da8a8e7d5f4d",
+  "handoffId": "8764137c-bce6-477b-beee-acfb965c3189",
+  "provider": "claude",
+  "status": "review",
+  "receipt": {
+    "hash": "8374f19e6b39638026357cbe33b2839fa35cb5f5b1049e7bb2a8d0506b30c1cb",
+    "id": "8764137c-bce6-477b-beee-acfb965c3189",
+    "locator": "Handoff \u00b7 characters 1\u2013742",
+    "part": 0,
+    "parts": 1,
+    "revision": 1,
+    "scope": "project",
+    "sourceRun": "bf400f67-33ba-4c8e-a9e4-d70037b9e068",
+    "text": "# Success criteria\n\n1. The 3D office feels calm and playful.\n2. Agents produce useful, reviewable work through official Codex and Claude Code subscriptions.\n3. Agents can use local personal, project, and company knowledge for clear tasks.\n4. Browser work is visible, and deliverables are saved with their sources.\n5. Work receives human review before sharing.\n\n**Provider shirt colors:** Codex \u2014 teal; Claude \u2014 terracotta. These colors remain fixed.\n\nLarger offices and stepped amenities remain future milestones.\n\n**Source:** \u201cWorklive \u2014 project goal,\u201d version 1 (revision 1), ID `project-goal:fa0e11ea-26df-48e2-bdae-7456052ff197`, passage locator: \u201cProject brief.\u201d Based only on the complete project goal supplied in the starting context.\n",
+    "title": "success-criteria.md"
+  },
+  "files": [
+    {
+      "name": "office-demo-test-plan.md",
+      "path": "/Users/clemenshoenig/Library/Application Support/com.worklive.prototype/runs/d2944dcf-ef9a-4fe6-b3cb-2fcd89c6b4d7/outputs/office-demo-test-plan.md",
+      "kind": "deliverable",
+      "bytes": 2298,
+      "hash": "ef0dc595ed426c063f31b90c48f389a2b885b3b3ac04454120b711d6c336529e",
+      "at": 1790779041854
+    },
+    {
+      "name": "response.md",
+      "path": "/Users/clemenshoenig/Library/Application Support/com.worklive.prototype/runs/d2944dcf-ef9a-4fe6-b3cb-2fcd89c6b4d7/outputs/response.md",
+      "kind": "reply",
+      "bytes": 1226,
+      "hash": "c3515eced699fe5ac9b0014a25112aea413f3c3d89b9f266fc4f05863e15a4af",
+      "at": 1790779048803
+    }
+  ],
+  "restartVerified": true,
+  "profilesUnchanged": true
+}

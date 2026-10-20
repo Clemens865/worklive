@@ -1,0 +1,33 @@
+{
+  "profilesUnchanged": true,
+  "tasks": [
+    {
+      "id": "039484be-3ba9-4dfd-923a-a7a644707a21",
+      "title": "Summarize the project\u2019s success criteria",
+      "agent": "agent-28f38211-35ff-422c-8505-1c7ae3bbe3ed",
+      "dependency": "",
+      "revision": 1,
+      "runId": "bf400f67-33ba-4c8e-a9e4-d70037b9e068",
+      "provider": "codex",
+      "status": "review",
+      "files": [
+        "success-criteria.md",
+        "response.md"
+      ]
+    },
+    {
+      "id": "0a589d5a-1017-44cb-9799-2b278822846e",
+      "title": "Draft the first-use checklist",
+      "agent": "ada",
+      "dependency": "039484be-3ba9-4dfd-923a-a7a644707a21",
+      "revision": 2,
+      "runId": "745bca46-482c-47d9-9891-e15e18b68760",
+      "provider": "claude",
+      "status": "review",
+      "files": [
+        "first-use-checklist.md",
+        "response.md"
+      ]
+    }
+  ]
+}

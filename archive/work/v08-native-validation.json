@@ -1,0 +1,41 @@
+{
+  "runId": "9f5c129a-4eb9-43c5-a332-b06359e2c0ff",
+  "taskId": "fcbc1205-6108-4abb-ba29-9561d9b3b758",
+  "fileId": "151bf069-5fd5-4c8a-bc26-33472374fa9d",
+  "fileHash": "6de10d265eefb9b8514cff840de4eec7398dbe44c80a7cc7092653a8cda9ad52",
+  "provider": "codex",
+  "status": "review",
+  "receipt": {
+    "excerpt": "# Reference for a Worklive attachment check\nThis is synthetic test material, not a company decision.\nThe sample studio is called Juniper.\nIts demo review is Friday at 14:00.\nThe requested deliverable is a short checklist with three items:\n1. Assign one bounded task to an agent.\n2. Inspect the visible work and the saved reference.\n3. Review the saved deliverable before sharing it.\nCodex shirts stay",
+    "hash": "6de10d265eefb9b8514cff840de4eec7398dbe44c80a7cc7092653a8cda9ad52",
+    "id": "151bf069-5fd5-4c8a-bc26-33472374fa9d",
+    "locator": "Text \u00b7 lines 1\u201315",
+    "part": 0,
+    "parts": 1,
+    "revision": 1,
+    "scope": "task",
+    "title": "task-reference-check.md",
+    "warning": "",
+    "text": "# Reference for a Worklive attachment check\nThis is synthetic test material, not a company decision.\nThe sample studio is called Juniper.\nIts demo review is Friday at 14:00.\nThe requested deliverable is a short checklist with three items:\n1. Assign one bounded task to an agent.\n2. Inspect the visible work and the saved reference.\n3. Review the saved deliverable before sharing it.\nCodex shirts stay teal. Claude Code shirts stay terracotta.\nLarger offices and the 20/30/40 amenity steps remain planned.\nThe check phrase is: moss-green notebook.\n"
+  },
+  "files": [
+    {
+      "name": "reference-checklist.md",
+      "path": "/Users/clemenshoenig/Library/Application Support/com.worklive.prototype/runs/9f5c129a-4eb9-43c5-a332-b06359e2c0ff/outputs/reference-checklist.md",
+      "kind": "deliverable",
+      "bytes": 803,
+      "hash": "bc267bba5af2e838cca25181c6b2f3cf74cbe01c67a17fa567d44cb8a667492c",
+      "at": 1790790556412
+    },
+    {
+      "name": "response.md",
+      "path": "/Users/clemenshoenig/Library/Application Support/com.worklive.prototype/runs/9f5c129a-4eb9-43c5-a332-b06359e2c0ff/outputs/response.md",
+      "kind": "reply",
+      "bytes": 457,
+      "hash": "9aad5ea9293f36332131b0cbbf04cfb94aa014e6f638ffcfd89fd2e17e9c73f4",
+      "at": 1790790593488
+    }
+  ],
+  "profilesUnchanged": true,
+  "restartVerified": true
+}

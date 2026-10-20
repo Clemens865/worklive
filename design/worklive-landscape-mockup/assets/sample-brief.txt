@@ -1,0 +1,8 @@
+Worklive onboarding brief
+
+Audience: a person meeting their first agent.
+Goal: make the first useful task easy to start.
+Tone: warm, direct and calm.
+Constraint: the user starts work and reviews the result.
+
+This is a sample file for testing the interactive mockup.

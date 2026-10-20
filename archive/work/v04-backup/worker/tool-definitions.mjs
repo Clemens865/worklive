@@ -1,0 +1,25 @@
+const object = (properties = {}, required = []) => ({ type: "object", properties, required, additionalProperties: false });
+const string = (description) => ({ type: "string", description });
+export const TOOL_DEFINITIONS = [
+  { name: "browser_open", description: "Open a public HTTP or HTTPS page in your visible Worklive browser and read its text and links. The user sees this exact session. No forms or account actions.", inputSchema: object({ url: string("Full public URL, including https://.") }, ["url"]) },
+  { name: "browser_read", description: "Read the current visible page, returning source evidence and stable link references. Always read again after the user takes and returns control.", inputSchema: object() },
+  { name: "browser_follow", description: "Follow a link from the most recent observation. The host rejects references after navigation or user takeover.", inputSchema: object({ observationId: string("ID returned by the last browser observation."), linkId: { type: "integer", minimum: 1 } }, ["observationId", "linkId"]) },
+  { name: "browser_scroll", description: "Scroll your visible browser, then read the current page.", inputSchema: object({ direction: { type: "string", enum: ["up", "down"] } }, ["direction"]) },
+  { name: "save_document", description: "Save a real Markdown, plain text or CSV deliverable in this run's output folder. Previous versions are preserved. Use source URLs to support factual claims.", inputSchema: object({ name: string("A simple file name ending in .md, .txt or .csv, without directories."), content: string("Complete file contents, up to 100000 characters.") }, ["name", "content"]) },
+];
+export function validateTool(name, args) {
+  const tool = TOOL_DEFINITIONS.find((t) => t.name === name);
+  if (!tool) throw new Error("This tool is not available in Worklive.");
+  if (!args || typeof args !== "object" || Array.isArray(args)) throw new Error("Invalid tool arguments.");
+  const schema = tool.inputSchema;
+  for (const key of Object.keys(args)) if (!Object.hasOwn(schema.properties, key)) throw new Error(`Unexpected tool argument: ${key}`);
+  for (const key of schema.required) if (!Object.hasOwn(args, key)) throw new Error(`Missing tool argument: ${key}`);
+  for (const [key, value] of Object.entries(args)) {
+    const type = schema.properties[key];
+    if (type.type === "string" && typeof value !== "string") throw new Error(`Invalid ${key}.`);
+    if (type.type === "integer" && (!Number.isSafeInteger(value) || value < type.minimum)) throw new Error(`Invalid ${key}.`);
+    if (type.enum && !type.enum.includes(value)) throw new Error(`Invalid ${key}.`);
+  }
+  if (args.url?.length > 8000 || args.content?.length > 100000 || args.name?.length > 100 || args.observationId?.length > 80) throw new Error("Tool input is too long.");
+  return tool;
+}

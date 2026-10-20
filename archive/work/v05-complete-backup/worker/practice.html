@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Fieldnotes — Worklive practice browser</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #f9faf5;
+        color: #283e32;
+        font:
+          15px/1.5 -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+      }
+      header {
+        padding: 23px 40px;
+        border-bottom: 1px solid #dfe7d8;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header b {
+        letter-spacing: 0.12em;
+        color: #567445;
+      }
+      header span {
+        font-size: 12px;
+        color: #71806c;
+      }
+      main {
+        max-width: 940px;
+        margin: auto;
+        padding: 30px 40px;
+      }
+      h1 {
+        font-size: 32px;
+        letter-spacing: -1px;
+        font-weight: 500;
+        margin: 0 0 5px;
+      }
+      p {
+        color: #697965;
+        margin: 0 0 20px;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #dde5d6;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .art {
+        height: 125px;
+        background: #dbe6cc;
+        display: grid;
+        place-items: center;
+        font-size: 48px;
+      }
+      .card:nth-child(2) .art {
+        background: #eaddcd;
+      }
+      .card:nth-child(3) .art {
+        background: #d7e7e0;
+      }
+      .info {
+        padding: 14px;
+      }
+      h2 {
+        font-weight: 500;
+        font-size: 17px;
+        margin: 0 0 6px;
+      }
+      .info p {
+        font-size: 12px;
+        min-height: 34px;
+        margin-bottom: 14px;
+      }
+      button,
+      a {
+        font: inherit;
+      }
+      button {
+        border: 0;
+        background: #4c6c43;
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 7px;
+        cursor: pointer;
+      }
+      button.secondary {
+        background: #edf2e7;
+        color: #3d5c35;
+      }
+      a {
+        color: #4c6c43;
+      }
+      #article,
+      #notes {
+        display: none;
+      }
+      .quote {
+        background: #e9f0e1;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        font-size: 20px;
+        color: #45613b;
+      }
+      textarea {
+        display: block;
+        width: 100%;
+        padding: 13px;
+        border: 1px solid #cad7bf;
+        background: white;
+        color: #283e32;
+        font:
+          16px/1.55 -apple-system,
+          sans-serif;
+        border-radius: 8px;
+        resize: vertical;
+        min-height: 148px;
+        margin: 16px 0;
+      }
+      #saved {
+        display: none;
+        background: #e3edda;
+        padding: 13px;
+        border-radius: 8px;
+        margin-top: 15px;
+      }
+      footer {
+        margin-top: 24px;
+        font-size: 12px;
+        color: #7b8b72;
+      }
+      .notice {
+        background: #eef3e8;
+        border-radius: 8px;
+        padding: 12px 15px;
+        margin-top: 20px;
+        font-size: 12px;
+        color: #607252;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <b>FIELDNOTES</b><span>Worklive practice browser · local page</span>
+    </header>
+    <main>
+      <section id="library">
+        <h1>Spaces for thoughtful work.</h1>
+        <p>Three references for a studio where work is visible.</p>
+        <div class="cards">
+          <article class="card">
+            <div class="art">⌑</div>
+            <div class="info">
+              <h2>The calm studio</h2>
+              <p>Give every agent a place to focus and return to.</p>
+              <button id="open-source">Read reference</button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="art">⌘</div>
+            <div class="info">
+              <h2>Room to collaborate</h2>
+              <p>Shared spaces make purposeful conversations visible.</p>
+              <button class="secondary" data-reference="collaborate">
+                Read reference
+              </button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="art">▤</div>
+            <div class="info">
+              <h2>Tools in context</h2>
+              <p>See the same browser your agent is using.</p>
+              <button class="secondary" data-reference="tools">
+                Read reference
+              </button>
+            </div>
+          </article>
+        </div>
+        <div class="notice">
+          This is a real webpage in an isolated Chromium session. The practice
+          agent will click a reference, write a note, and save it here.
+        </div>
+      </section>
+      <section id="article">
+        <button class="secondary" id="back-library">← References</button>
+        <h1 style="margin-top: 20px" id="reference-title">The calm studio</h1>
+        <p>Reference 01 / Office design</p>
+        <div class="quote">
+          A desk is a place to return to. A shared room makes collaboration
+          visible.
+        </div>
+        <p>
+          Keep the workspace calm. Make each agent’s current work easy to
+          inspect. Give people a clear way to step in and take control.
+        </p>
+        <button id="make-notes">Add to research notes</button>
+      </section>
+      <section id="notes">
+        <h1>Research notes</h1>
+        <p>Source: <span id="note-source">The calm studio</span></p>
+        <label for="note">What should we carry into Worklive?</label
+        ><textarea id="note" placeholder="Write the key ideas here…"></textarea
+        ><button id="save-notes">Save notes</button>
+        <button class="secondary" id="back-source">Back to source</button>
+        <div id="saved" role="status">
+          ✓ Notes saved in this browser session.
+        </div>
+      </section>
+      <footer>
+        Practice task only · nothing is sent to an external service
+      </footer>
+    </main>
+    <script>
+      const show = (id) => {
+        for (const n of ["library", "article", "notes"])
+          document.getElementById(n).style.display =
+            n === id ? "block" : "none";
+      };
+      document.getElementById("open-source").onclick = () => {
+        show("article");
+        document.title = "The calm studio — Fieldnotes";
+      };
+      for (const b of document.querySelectorAll("[data-reference]"))
+        b.onclick = () => {
+          const name =
+            b.dataset.reference === "tools"
+              ? "Tools in context"
+              : "Room to collaborate";
+          document.getElementById("reference-title").textContent = name;
+          document.getElementById("note-source").textContent = name;
+          show("article");
+        };
+      document.getElementById("back-library").onclick = () => show("library");
+      document.getElementById("make-notes").onclick = () => show("notes");
+      document.getElementById("back-source").onclick = () => show("article");
+      document.getElementById("save-notes").onclick = () => {
+        sessionStorage.setItem(
+          "worklive-notes",
+          document.getElementById("note").value,
+        );
+        document.getElementById("saved").style.display = "block";
+        document.title = "Notes saved — Fieldnotes";
+      };
+      document.getElementById("note").value =
+        sessionStorage.getItem("worklive-notes") || "";
+    </script>
+  </body>
+</html>

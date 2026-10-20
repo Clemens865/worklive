@@ -1,0 +1,270 @@
+WORKLIVE — SCREEN LANDSCAPE
+Screen plan and source review · 1 October 2026
+
+DIRECTION
+The user selected the Screen Landscape image: an open, quiet space containing
+thin agent screens, with one pulled forward for focused work. The interface
+should preserve this visual identity while making everyday actions direct.
+This is a design study, not an implemented replacement for the office.
+
+The product has one environment with several views, rather than ten unrelated
+applications. Overview shows identities and status; focus gives a screen a
+readable, face-on working size; temporary sheets handle menu, context and review.
+Depth establishes which object is selected. It should not make reading harder.
+
+WHAT I INSPECTED
+The current working source and README: src/main.ts, types.ts, projects.ts,
+context.ts, task-files.ts, documents.ts, inbox.ts, workflow.ts, office/hire.js,
+and worker task admission in agent-runtime.mjs. These are source capabilities;
+this session did not run CLI tasks or verify the packaged app. The shared log
+still reserves application editing to Claude, so all work here is separate.
+
+The existing app already provides:
+- Named agents, roles, personalities, provider choice and character appearance.
+- Official Codex / Claude Code connection checks and terminal sign-in.
+- Bounded tasks with manual start, pause, stop, resume and revision.
+- Browser previews and explicit user takeover. Taking control pauses the task;
+  returning control does not automatically resume it.
+- Local per-agent chat history. Chat sends use official provider CLIs, carry
+  profile/status/task brief and recent messages, and do not use tools.
+- Projects, goals, team membership, planned tasks and one prerequisite per task.
+- Personal, project and company memory; local reference-file imports; versions,
+  pins, archive/restore, company-memory proposals and provenance.
+- Task-specific references, formatted document reading/editing, and file search.
+- Questions, blocked work, result review/acceptance, and reviewed single-file
+  handoffs that create planned tasks.
+
+The new spatial layout, focus transitions, overview filtering and "Prepare
+task" shortcut from chat are proposed presentation/workflow changes. They are
+not current capabilities merely because a generated picture shows them.
+
+TEN CORE VIEWS
+01 — TEAM OVERVIEW
+Image: 01-team-overview.png
+Purpose: See the whole team and know who needs attention.
+Entry: Default home; Escape from a focused agent.
+Actions:
+- Choose any agent screen to focus
+- Open an attention marker
+- Filter by project or status
+- Add an agent
+Basis: Agent roster, provider identity, task/run status and browser screenshots exist. The spatial arrangement, search/filter and preview lifecycle are proposed.
+
+02 — AGENT WORKSPACE
+Image: 02-agent-workspace.png
+Purpose: Observe or control the exact browser an agent uses, alongside its task.
+Entry: Select an agent screen from the overview.
+Actions:
+- Open Chat, Task, Context or Results
+- Take control, which pauses agent work
+- Return control and explicitly Resume
+- Return to overview
+Basis: Live browser, navigation, user takeover, pause/resume/stop, task brief and work results exist. Unified foreground composition is proposed.
+
+03 — AGENT CHAT
+Image: 03-agent-chat.png
+Purpose: Talk to an agent while keeping conversation distinct from work execution.
+Entry: Chat tab on a focused agent or Chat action on its nameplate.
+Actions:
+- Send a message
+- Clear saved conversation
+- Prepare a separate task brief
+- Return to browser or results
+Basis: Persistent per-agent chat via official CLI exists. It is tool-free and does not retrieve the memory/file library. Preparing a task from chat is a proposed UI shortcut.
+
+04 — MENU
+Image: 04-menu.png
+Purpose: Reach the rest of Worklive without keeping permanent navigation panels open.
+Entry: Menu in the bottom capsule or keyboard shortcut to be chosen.
+Actions:
+- Open team, inbox, projects, handoffs or library
+- Find a file
+- Create an agent
+- Open provider connections
+Basis: Destinations already exist as scattered buttons; this compact spatial menu is a proposed unification.
+
+05 — PROJECT SPACE
+Image: 05-project-space.png
+Purpose: Organize a project brief, assigned team and task progression in one place.
+Entry: Projects from the menu; choose a project.
+Actions:
+- Edit the project brief
+- Manage team
+- Create a planned task with owner and prerequisite
+- Open task files, work, review or handoff
+Basis: Project goals, membership, five task states, manual starts and a single prerequisite per task exist. The spatial board is a new view over them.
+
+06 — MEMORY AND FILES
+Image: 06-memory-library.png
+Purpose: Make memory scope and file provenance visible before context is used.
+Entry: Library from menu; Context on an agent.
+Actions:
+- Choose Personal, Project or Company
+- Read a note/file and its source and timestamp
+- Import into an explicit scope
+- Pin, edit, archive, restore, review a company proposal
+Basis: Personal/project/company scope, local notes/files, import, pinned notes, versions, archive/restore, company proposals and document viewing exist.
+
+07 — INBOX AND REVIEW
+Image: 07-inbox-review.png
+Purpose: Bring questions, blocked work and finished results to the user's attention.
+Entry: Inbox badge or attention tab on an agent screen.
+Actions:
+- Answer an agent question and continue its task
+- Open blocked work
+- Read result and sources
+- Mark accepted or send revision
+Basis: Inbox groups, ask_user, pause/resume, source evidence, result viewer/editor, acceptance and revisions exist.
+
+08 — REVIEWED HANDOFF
+Image: 08-reviewed-handoff.png
+Purpose: Show exactly which accepted file will become the next agent's input.
+Entry: Hand off result on accepted work; Handoffs menu.
+Actions:
+- Inspect exact file preview
+- Choose a project teammate
+- Write next task title/brief
+- Authorize sharing and queue; start separately
+Basis: A single explicitly reviewed file snapshot, same-project recipient, title/brief, sharing consent and manually started queued task exist.
+
+09 — CREATE AGENT
+Image: 09-create-agent.png
+Purpose: Create a named identity with provider, role and personality, then give it work separately.
+Entry: + Add agent in overview or Create agent in menu.
+Actions:
+- Choose Codex or Claude Code
+- Name the agent and define role/personality
+- Optionally open appearance settings
+- Create idle agent; start tasks separately
+Basis: Agent creation/profile editing, fixed provider identity and optional character customization exist; the blank-screen creation animation is proposed.
+
+10 — CONNECTIONS AND FIRST-RUN SETUP
+Image: 10-provider-connections.png
+Purpose: Make official provider login and recovery understandable without exposing credentials.
+Entry: First run when no provider is ready; Connections in the menu.
+Actions:
+- Inspect each provider state
+- Open its official tool to sign in
+- Recheck connection
+- Continue with an available provider
+Basis: Provider readiness states, check connection and opening official tool in terminal exist. One global setup sheet is proposed.
+
+PRIMARY JOURNEYS
+1. First use:
+   Connections -> sign in through an official tool -> recheck -> Create agent
+   -> Team overview. The agent is idle until the user starts a task.
+2. Real work:
+   Overview -> select agent -> Task -> write a brief and choose project/task
+   context -> Start -> Browser/Results. Chat is not a hidden task-launch button.
+3. Conversation:
+   Select agent -> Chat -> discuss. "Prepare task" would copy a reviewed brief
+   into a task composer; it would not execute or silently grant file access.
+4. Missing information:
+   Agent question -> Inbox or its attention tab -> answer -> explicitly send
+   answer and continue. This is a run continuation, separate from casual chat.
+5. Finished work:
+   Inbox -> read result and sources -> revise or Mark accepted -> optionally
+   hand off one file -> review exact content and recipient -> authorize and
+   queue -> start the new task separately.
+6. Context:
+   Agent Context or global Library -> choose scope -> read/import/edit ->
+   return to task. Task-only files stay distinct from reusable library files.
+
+SUPPORTING SHEETS AND STATES
+These belong to the core views above, not additional permanent navigation areas:
+- Task composer: title, brief/expected deliverable, owner, prerequisite, project;
+  task files become attachable after the planned task is saved.
+- Agent profile: edit name, role, personality and optional existing appearance;
+  preserve all current character data even if the landscape does not display it.
+- File finder (existing Command-P / Command-K): results, notes, library files,
+  task references; open the shared reader/editor.
+- Document reader: formatted/source view, version-aware edit/save when allowed,
+  extracted text for PDF/DOCX, and read-only explanation when edits are locked.
+- Task detail/history: earlier runs, current run, source evidence, context
+  supplied, memory additions, event log, revision and provider interruption.
+- Company proposal review: publish the specific reviewed contribution.
+- Project settings: brief and definition of done, membership, one working
+  project per agent; changes affect subsequent context.
+- Connection failure/recovery: missing CLI, sign-in needed, unavailable worker,
+  subscription limit, interrupted task; clear check/reconnect/resume action.
+- Empty states: no agents, no project, no tasks, no memory, nothing in inbox.
+- Browser states: opening, live, last capture with timestamp, user in control,
+  failure and retry. Never show an old screenshot as if it were live.
+
+PRODUCT RULES TO PRESERVE
+The screenshot is presentation; existing authority checks stay in Rust/worker.
+Codex identity stays teal #2D9D8F; Claude Code stays terracotta #D97757, accompanied
+by a provider label. Any character shirts keep these colors. Attention and
+acceptance use separate labels/icons; global memory scopes have no provider.
+
+The runtime currently allows two active task runs total, one per provider.
+A twelve-person overview does not mean twelve working CLI sessions. Chat has
+its own existing path; the two-task limit is not a claim about all subprocesses.
+
+Personal/project/company scopes remain distinct and provider-independent.
+A task file is not automatically a project file. The current chat implementation
+does not retrieve the full memory/file library; do not imply file-grounded chat
+without explicitly implementing a scoped retrieval path.
+
+Review is not acceptance, acceptance is not sharing, and queuing is not starting.
+A prerequisite unlocks order after acceptance; it does not transfer a file.
+A handoff preserves one reviewed file snapshot and the next-step brief; it does
+not copy source notebooks or conversations. Source checks must remain intact.
+
+Read-only context and result inspection may remain available during work.
+The current app locks shared-plan/context/review changes while tasks run.
+The design must show why an action is unavailable, and let the user pause work
+deliberately. Opening a review view must not silently pause running agents.
+
+Do not move files/memory between scopes with an unconfirmed visual gesture.
+An optional drag shortcut may open a scoped task/attachment/handoff sheet; the
+existing checks and explicit user actions remain authoritative.
+
+INTERACTION AND ACCESSIBILITY
+- One click or Enter brings a screen forward; Escape returns one level.
+- Use the same agent identity across Browser, Chat, Task, Context and Results.
+- The global capsule is consistent: Overview, Inbox, Projects, Library, Menu.
+- Global project selection is a VIEW FILTER, not a project reassignment.
+- Keep focused content face-on and opaque enough to read. Distant screens
+  orient the user but do not force interaction with tiny perspective text.
+- Provide keyboard focus, shortcuts, screen-reader names, legible contrast,
+  reduced-motion transitions and click alternatives to every drag gesture.
+- Do not continuously orbit, bob or zoom screens. Move only on interaction.
+- At larger roster sizes use compact bands/filtering and bounded previews.
+  The twelve-agent image is an example, not a proven capacity limit.
+
+LIGHTWEIGHT IMPLEMENTATION CANDIDATE
+Prototype the shell with ordinary accessible DOM controls and shallow CSS
+transforms over a static background; live browser images can use the existing
+capture stream. A full 3D engine is not required merely to depict angled planes.
+Avoid making every empty sheet a permanent Chromium instance. Idle sheets can
+show honest standby/result states; browser lifetime and capture throttling need
+a deliberate implementation, not just a visual redesign.
+
+Measure the actual Tauri build with representative tasks, viewport, capture
+rates, CPU/memory pressure and frame-time stalls. These still images do not
+establish smoothness, energy usage or latency.
+
+SUGGESTED FIRST PROTOTYPE
+Build a separate thin shell with Overview -> Focused browser -> Chat -> Menu,
+using sample or read-only state first. Validate one-click access, legibility,
+keyboard navigation and a return-to-overview gesture. Then connect the existing
+task lifecycle, Inbox, Library and Projects. Keep the office available during
+evaluation; this exploration alone does not authorize deleting it.
+A useful product check is whether a user can locate a blocked agent, inspect its
+evidence, supply an answer, and return to the team without getting lost.
+
+IMAGE AND DELIVERY NOTES
+Ten PNGs are static AI-generated interface concepts. Example browser pages,
+documents, agents, times and source counts are illustrative. Not every small
+piece of generated copy is a binding specification. This plan and existing
+product rules take precedence over decorative or incidental image text.
+The images are different illustrative moments, not one synchronized recording.
+Iris in the creation image is a draft identity, not a migration of another image's
+Iris. No real agents, files, projects, provider sessions or app data were changed.
+
+Generated with the built-in image_gen tool, using the user's selected reference.
+Exact initial prompts: screens-and-prompts.json.
+Targeted behavior/scope corrections: refinement-prompts.json.
+Source and final image locations: image-manifest.json.
+

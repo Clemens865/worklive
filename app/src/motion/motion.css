@@ -1,0 +1,56 @@
+/* Worklive motion layer.
+   Adapted from Transitions.dev free recipes (toast open/close, modal open/close, tabs sliding, thinking states,
+   panel reveal) by Jakub Antalik — used in this end product under the Transitions.dev terms, see
+   TRANSITIONS-LICENSE-NOTES.md and transitions-terms.html next to this file. Tuned to Worklive's tokens. */
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --toast-open: 350ms; --toast-close: 250ms;
+  --modal-open: 260ms; --modal-close: 160ms;
+  --tabs-dur: 260ms;
+  --panel-open: 400ms; --panel-close: 320ms;
+}
+
+/* Toasts: rise from below with fade + cross-blur + slight scale; faster close than open. */
+.toast-stack { position: fixed; right: 20px; bottom: 20px; z-index: 60; display: flex; flex-direction: column-reverse; gap: 10px; pointer-events: none; }
+.t-toast { pointer-events: auto; opacity: 0; transform: translateY(16px) scale(.97); filter: blur(2px);
+  transition: opacity var(--toast-close) var(--ease-out), transform var(--toast-close) var(--ease-out), filter var(--toast-close) var(--ease-out); }
+.t-toast.is-open { opacity: 1; transform: none; filter: blur(0);
+  transition: opacity var(--toast-open) var(--ease-out), transform var(--toast-open) var(--ease-out), filter var(--toast-open) var(--ease-out); }
+
+/* Native <dialog>: scale up on open, quicker scale-down on close (see motion.ts closeDialog). */
+dialog[open] { animation: t-modal-in var(--modal-open) var(--ease-out); }
+dialog.t-modal.is-closing { animation: t-modal-out var(--modal-close) var(--ease-out) forwards; }
+dialog[open]::backdrop { animation: t-fade-in var(--modal-open) var(--ease-out); }
+dialog.t-modal.is-closing::backdrop { animation: t-fade-out var(--modal-close) var(--ease-out) forwards; }
+@keyframes t-modal-in { from { opacity: 0; transform: scale(.96); } }
+@keyframes t-modal-out { to { opacity: 0; transform: scale(.96); } }
+@keyframes t-fade-in { from { opacity: 0; } }
+@keyframes t-fade-out { to { opacity: 0; } }
+
+/* Sliding pill behind the selected tab / segment. motion.ts positions it. */
+.t-tabs { position: relative; }
+.t-tabs > .t-tabs-pill { position: absolute; top: 3px; left: 0; height: calc(100% - 6px); width: 0; z-index: 0; pointer-events: none;
+  transition: transform var(--tabs-dur) var(--ease-out), width var(--tabs-dur) var(--ease-out); }
+.t-tabs > :not(.t-tabs-pill) { position: relative; z-index: 1; }
+
+/* Thinking shimmer on a label while an AI suggestion loads. */
+.t-think { position: relative; color: var(--muted, #7c7c7c); }
+.t-think::before { content: attr(data-text); position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(90deg, transparent 0%, transparent 40%, var(--ink, #0d0d0d) 50%, transparent 60%, transparent 100%);
+  background-size: 400% 100%; background-repeat: no-repeat; -webkit-background-clip: text; background-clip: text;
+  color: transparent; -webkit-text-fill-color: transparent; animation: t-think-shimmer 1.8s linear infinite; }
+@keyframes t-think-shimmer { from { background-position: 100% 0; } to { background-position: 0% 0; } }
+
+/* Panel reveal: slide + fade + cross-blur (inspector content when the selection changes). */
+.t-panel-reveal { animation: t-panel-in var(--panel-open) var(--ease-out); }
+@keyframes t-panel-in { from { opacity: 0; transform: translateY(10px); filter: blur(2px); } }
+
+/* Status change pop (numbers / chips). */
+.t-pop { animation: t-pop 320ms var(--ease-out); }
+@keyframes t-pop { 0% { transform: scale(.9); opacity: .4; } 60% { transform: scale(1.04); opacity: 1; } 100% { transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .t-toast, .t-tabs > .t-tabs-pill { transition: none !important; }
+  dialog[open], dialog.t-modal.is-closing, dialog[open]::backdrop, .t-panel-reveal, .t-pop { animation: none !important; }
+  .t-think::before { animation: none; }
+}

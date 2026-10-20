@@ -1,0 +1,7 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {DESKS,PROVIDERS,RADIUS,createPeople,advancePeople,walkable,route,frameSummary} from '../simulation.mjs';
+test('provider colors remain fixed and twenty distinct desks exist',()=>{assert.equal(PROVIDERS.codex,'#2D9D8F');assert.equal(PROVIDERS.claude,'#D97757');assert.equal(DESKS.length,20);assert.equal(new Set(DESKS.map(d=>`${d.x},${d.z}`)).size,20);});
+test('every desk has a route to the shared coffee area',()=>{for(const a of createPeople()){const path=route(a,{x:7.2,z:-4.5});assert.ok(path.length,`Agent ${a.id} can reach coffee`);for(const p of path)assert.ok(walkable(p.x,p.z));}});
+test('twenty agents stay separated and outside furniture over five minutes',()=>{const people=createPeople();for(let i=0;i<9000;i++){advancePeople(people,1/30,i/30);for(const a of people){assert.ok(walkable(a.x,a.z),`Agent ${a.id} crossed furniture`);for(const b of people)if(b.id>a.id)assert.ok(Math.hypot(a.x-b.x,a.z-b.z)>=RADIUS*2,`Agents ${a.id} and ${b.id} overlap`);}}assert.ok(people.slice(2).filter(a=>a.distance>3).length===18,'All idle agents participate in office life');});
+test('frame report includes sustained cadence and slow-frame count',()=>{assert.equal(frameSummary([]),null);const s=frameSummary([16,16,16,16,80]);assert.equal(s.frames,5);assert.equal(s.p95,80);assert.equal(s.over50,1);assert.equal(s.fps,1000/28.8);});

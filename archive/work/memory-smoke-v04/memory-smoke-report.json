@@ -1,0 +1,148 @@
+[
+  {
+    "provider": "codex",
+    "status": "review",
+    "contextUsed": [
+      {
+        "title": "Company handbook",
+        "revision": 1
+      },
+      {
+        "title": "atlas-reference.txt",
+        "revision": 1
+      },
+      {
+        "title": "Atlas delivery",
+        "revision": 1
+      },
+      {
+        "title": "Company handbook",
+        "revision": 1
+      },
+      {
+        "title": "atlas-reference.txt",
+        "revision": 1
+      },
+      {
+        "title": "Atlas delivery",
+        "revision": 1
+      }
+    ],
+    "memoriesAdded": [
+      {
+        "author": "memory-test",
+        "createdAt": 1790768200261,
+        "id": "565f5b36-7f48-4ba6-a0c5-fb354f1e3086",
+        "kind": "note",
+        "pinned": false,
+        "preview": "Atlas delivery day: Thursday. Private review word: Juniper-418.\n\nDelivery source: Atlas delivery, ID 8aecd4dc-f222-4815-9436-2fa057a3f95b, revision 1, Note · lines 1–1 (part 0; pro",
+        "provider": "codex",
+        "revision": 1,
+        "scope": "agent",
+        "scopeId": "memory-test|ad34b508-2de9-41f9-8e11-d4b52f3b3281",
+        "source": "Atlas delivery | ID 8aecd4dc-f222-4815-9436-2fa057a3f95b | revision 1 | Note · lines 1–1 | part 0; atlas-reference.txt | ID 1686e773-71a5-4105-adfe-829e79b16e50 | revision 1 | Text · lines 1–2 | part 0",
+        "sourceRun": "dde01004-1789-4144-a6ef-44d3ed508db4",
+        "status": "published",
+        "title": "Atlas checklist",
+        "updatedAt": 1790768200261,
+        "warning": ""
+      }
+    ],
+    "sessionId": "01a0f219-6b62-7f52-b69a-49d562c9293c",
+    "freshContext": false,
+    "files": [
+      "facts.md",
+      "response.md"
+    ]
+  },
+  {
+    "provider": "claude",
+    "status": "review",
+    "contextUsed": [
+      {
+        "title": "Company handbook",
+        "revision": 1
+      },
+      {
+        "title": "Atlas checklist",
+        "revision": 1
+      },
+      {
+        "title": "Atlas delivery",
+        "revision": 1
+      },
+      {
+        "title": "atlas-reference.txt",
+        "revision": 1
+      },
+      {
+        "title": "Company handbook",
+        "revision": 1
+      },
+      {
+        "title": "Atlas checklist",
+        "revision": 1
+      },
+      {
+        "title": "atlas-reference.txt",
+        "revision": 1
+      },
+      {
+        "title": "Atlas delivery",
+        "revision": 1
+      }
+    ],
+    "memoriesAdded": [],
+    "sessionId": "09ecbf7a-1978-46a2-940a-4df0a8d0f6f9",
+    "freshContext": true,
+    "files": [
+      "handoff.md",
+      "response.md"
+    ]
+  },
+  {
+    "provider": "codex",
+    "status": "review",
+    "contextUsed": [
+      {
+        "title": "Company handbook",
+        "revision": 2
+      },
+      {
+        "title": "Atlas checklist",
+        "revision": 1
+      },
+      {
+        "title": "Atlas delivery",
+        "revision": 1
+      },
+      {
+        "title": "atlas-reference.txt",
+        "revision": 1
+      },
+      {
+        "title": "Company handbook",
+        "revision": 2
+      },
+      {
+        "title": "Atlas checklist",
+        "revision": 1
+      },
+      {
+        "title": "atlas-reference.txt",
+        "revision": 1
+      },
+      {
+        "title": "Atlas delivery",
+        "revision": 1
+      }
+    ],
+    "memoriesAdded": [],
+    "sessionId": "01a0f21a-9cd8-77c0-b21e-41441b830637",
+    "freshContext": true,
+    "files": [
+      "correction.md",
+      "response.md"
+    ]
+  }
+]

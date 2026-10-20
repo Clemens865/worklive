@@ -1,0 +1,103 @@
+/* Ops Deck 7 skin: the whole app in a run-down control-room look. Only active in the Deck 7
+   workspace (body.ws-deck7); it overrides the design tokens from style.css plus a few details. */
+
+body.ws-deck7 {
+  color-scheme: dark;
+  --font: "SF Pro Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-display: "SF Mono", ui-monospace, Menlo, monospace;
+  --bg: #15181e;
+  --surface: #1e222a;
+  --surface-2: #242932;
+  --surface-3: #2d333d;
+  --glass: rgba(30, 34, 42, 0.88);
+  --glass-line: rgba(255, 255, 255, 0.06);
+  --ink: #ece6d6;
+  --ink-2: #cfc8b6;
+  --muted: #9aa1aa;
+  --faint: #6c737d;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --shadow-1: 0 1px 0 rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 2px 0 rgba(0, 0, 0, 0.45), 0 10px 24px -10px rgba(0, 0, 0, 0.6);
+  --shadow-3: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 24px 64px -16px rgba(0, 0, 0, 0.8);
+  --accent: #f2c94c;
+  --accent-hover: #ffd866;
+  --on-accent: #1d1b22;
+  --focus: #63d3ff;
+  --ok: #5fdc8f;
+  --warn: #f5b335;
+  --bad: #ff5a4f;
+  --info: #63d3ff;
+  --r-xs: 3px;
+  --r-sm: 4px;
+  --r-md: 5px;
+  --r-lg: 7px;
+  --r-xl: 9px;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* hazard stripe under the header, stencil headings */
+body.ws-deck7 .app-header { border-bottom: 0; box-shadow: 0 3px 0 -1px #15181e, 0 4px 0 0 transparent; background-image: linear-gradient(var(--bg), var(--bg)), repeating-linear-gradient(135deg, #e0b531 0 10px, #15181e 10px 20px); background-size: 100% calc(100% - 4px), 100% 4px; background-repeat: no-repeat; background-position: top, bottom; }
+body.ws-deck7 h1, body.ws-deck7 h2, body.ws-deck7 .eyebrow, body.ws-deck7 .brand-name { font-family: var(--font-display); letter-spacing: 0.04em; }
+body.ws-deck7 .brand-mark { background: var(--accent); color: var(--on-accent); font-family: var(--font-display); font-weight: 800; }
+body.ws-deck7 button.primary, body.ws-deck7 .primary { text-transform: uppercase; letter-spacing: 0.06em; font-family: var(--font-display); font-size: 12px; }
+body.ws-deck7 .workspace-switch { border: 1px dashed var(--line-strong); }
+body:not(.ws-deck7) .workspace-switch { margin-right: 4px; }
+
+/* panels read like riveted metal plates */
+body.ws-deck7 .office-life-panel, body.ws-deck7 .activity-panel, body.ws-deck7 .inspector, body.ws-deck7 .agent-card, body.ws-deck7 .chat-panel {
+  background-image: radial-gradient(circle at 8px 8px, rgba(255,255,255,.18) 1.5px, transparent 2px), radial-gradient(circle at calc(100% - 8px) 8px, rgba(255,255,255,.18) 1.5px, transparent 2px);
+}
+body.ws-deck7 .activity-item, body.ws-deck7 #office-moment { font-family: var(--font-display); font-size: 12px; }
+body.ws-deck7 .playful-badge, body.ws-deck7 .live-badge { font-family: var(--font-display); }
+body.ws-deck7 .office-stage { background: #262b34; }
+
+/* the robot creator */
+.deck7-creator { border: 0; padding: 0; border-radius: 10px; background: #1e222a; color: #ece6d6; box-shadow: 0 30px 90px -20px rgba(0,0,0,.8); width: min(920px, 94vw) !important; max-width: 94vw !important; max-height: 92vh; overflow: auto; }
+.deck7-creator::backdrop { background: rgba(10, 12, 16, 0.6); backdrop-filter: blur(3px); }
+.deck7-creator .dc-wrap { display: grid; grid-template-columns: 1.1fr 1fr; min-height: 520px; margin: 0; }
+.deck7-creator .dc-stage { position: relative; background: radial-gradient(ellipse at 50% 70%, #3a4150, #1a1d24 70%); border-radius: 10px 0 0 10px; }
+.deck7-creator .dc-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.deck7-creator .dc-parts { position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+.deck7-creator .dc-parts button { border: 1px solid rgba(255,255,255,.18); background: rgba(20,22,28,.7); color: #ece6d6; border-radius: 999px; padding: 6px 12px; font: 600 12px/1 -apple-system, system-ui, sans-serif; cursor: pointer; }
+.deck7-creator .dc-parts button:hover { background: #f2c94c; color: #1d1b22; border-color: #f2c94c; }
+.deck7-creator .dc-parts .dc-all { background: #f2c94c; color: #1d1b22; border-color: #f2c94c; }
+.deck7-creator .dc-form { padding: 26px 28px 22px; display: flex; flex-direction: column; gap: 12px; }
+.deck7-creator .dc-kicker { margin: 0; font: 700 11px/1 "SF Mono", ui-monospace, monospace; letter-spacing: .14em; text-transform: uppercase; color: #f2c94c; }
+.deck7-creator h2 { margin: 0; font: 700 24px/1.2 "SF Mono", ui-monospace, monospace; }
+.deck7-creator .dc-sub, .deck7-creator .dc-note { margin: 0; color: #9aa1aa; font-size: 13px; line-height: 1.45; }
+.deck7-creator .dc-note { font-size: 11px; }
+.deck7-creator label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 600; color: #cfc8b6; }
+.deck7-creator input, .deck7-creator select, .deck7-creator textarea { background: #15181e; color: #ece6d6; border: 1px solid rgba(255,255,255,.14); border-radius: 5px; padding: 9px 10px; font: 14px -apple-system, system-ui, sans-serif; resize: vertical; }
+.deck7-creator .dc-row { display: flex; gap: 6px; }
+.deck7-creator .dc-row input { flex: 1; min-width: 0; }
+.deck7-creator button { cursor: pointer; }
+.deck7-creator .dc-row button, .deck7-creator [data-cancel] { border: 1px solid rgba(255,255,255,.16); background: transparent; color: #ece6d6; border-radius: 5px; padding: 0 12px; font-weight: 600; }
+.deck7-creator .dc-actions { margin-top: auto; display: flex; align-items: center; gap: 8px; }
+.deck7-creator .dc-desk { flex: 1; color: #9aa1aa; font: 12px "SF Mono", ui-monospace, monospace; }
+.deck7-creator [data-cancel] { height: 38px; }
+.deck7-creator .dc-primary { border: 0; background: #f2c94c; color: #1d1b22; border-radius: 5px; height: 38px; padding: 0 18px; font: 800 12px/1 "SF Mono", ui-monospace, monospace; letter-spacing: .08em; text-transform: uppercase; }
+@media (max-width: 720px) { .deck7-creator .dc-wrap { grid-template-columns: 1fr; } .deck7-creator .dc-stage { min-height: 300px; border-radius: 10px 10px 0 0; } }
+
+/* dispatch on the agent card: quick task + learning */
+.deck7-orders { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line-strong); }
+.deck7-orders .quick-form { display: flex; gap: 6px; }
+.deck7-orders .quick-form input { flex: 1; min-width: 0; background: var(--bg); color: var(--ink); border: 1px solid var(--line-strong); border-radius: var(--r-sm); padding: 7px 9px; font-size: 12px; }
+.deck7-orders .quick-form button { white-space: nowrap; }
+.deck7-orders .quick-presets { display: flex; flex-wrap: wrap; gap: 4px; }
+.deck7-orders .chip-btn { border: 1px solid var(--line-strong); background: transparent; color: var(--muted); border-radius: 999px; padding: 3px 8px; font-size: 11px; cursor: pointer; }
+.deck7-orders .chip-btn:hover { color: var(--on-accent); background: var(--accent); border-color: var(--accent); }
+
+/* poster editor (reuses the robot creator's dialog styles) */
+.deck7-poster .dp-stage { display: grid; place-items: center; padding: 28px; }
+.deck7-poster .dp-stage canvas { position: static; width: 100%; height: auto; max-height: 100%; box-shadow: 0 18px 40px -12px rgba(0,0,0,.7); transform: rotate(-1.5deg); }
+.deck7-poster .dp-tabs { display: flex; gap: 6px; }
+.deck7-poster .dp-tabs button { flex: 1; border: 1px solid rgba(255,255,255,.16); background: transparent; color: #ece6d6; border-radius: 5px; padding: 8px; font-weight: 700; cursor: pointer; }
+.deck7-poster .dp-tabs button[aria-pressed="true"] { background: #f2c94c; color: #1d1b22; border-color: #f2c94c; }
+.deck7-poster .dp-image { display: flex; flex-direction: column; gap: 10px; }
+.deck7-poster .dp-colors { display: flex; gap: 6px; flex-wrap: wrap; }
+.deck7-poster .dp-colors button { width: 36px; height: 30px; border-radius: 5px; border: 1px solid rgba(255,255,255,.2); font: 800 12px/1 "SF Mono", ui-monospace, monospace; cursor: pointer; }
+.deck7-poster .dp-reset { border: 0; background: transparent; color: #9aa1aa; text-decoration: underline; padding: 0; font-size: 12px; cursor: pointer; }
+.deck7-poster .dp-error { color: #ff8a7a; }
+.deck7-poster [hidden] { display: none !important; }

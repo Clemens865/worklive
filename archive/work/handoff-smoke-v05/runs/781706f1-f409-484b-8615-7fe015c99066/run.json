@@ -1,0 +1,108 @@
+{
+  "id": "781706f1-f409-484b-8615-7fe015c99066",
+  "agentId": "recipient",
+  "provider": "claude",
+  "task": "Read all passages of the shared file with handoff_read. Save handoff-check.md containing the launch word and delivery day, citing the filename, handoff ID, hash and locator. Do not browse or add memories.",
+  "status": "review",
+  "message": "Ready for review. The result and source evidence are saved locally.",
+  "text": "I saved `handoff-check.md`. The shared file has only one passage, and I read it.\n\n- **Launch word:** Solstice-621\n- **Delivery day:** Friday\n\n**Source:** approved.md, handoff ID `887d2e71-297f-4963-ae18-99e001e280ac`, hash `57baca78…290fe6e`, found at \"Handoff · characters 1–76\" (part 0 of 1).\n\nI didn't browse the web or add any memories.",
+  "startedAt": 1790769832722,
+  "endedAt": 1790769844104,
+  "sessionId": "4a6b5d98-7e1e-442b-9d50-7fb39f3a5be1",
+  "model": "claude-opus-5-5",
+  "version": "2.1.285 (Claude Code)",
+  "events": [
+    {
+      "at": 1790769834131,
+      "message": "Claude Code is working through your subscription."
+    },
+    {
+      "at": 1790769837647,
+      "message": "Reading local context"
+    },
+    {
+      "at": 1790769841298,
+      "message": "Saving handoff-check.md"
+    },
+    {
+      "at": 1790769844107,
+      "message": "Ready for review. The result and source evidence are saved locally."
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "handoff-check.md",
+      "path": "/Users/clemenshoenig/Documents/Codex/2026-09-30/i-w/work/handoff-smoke-v05/runs/781706f1-f409-484b-8615-7fe015c99066/outputs/handoff-check.md",
+      "kind": "deliverable",
+      "bytes": 378,
+      "hash": "324b6aa46d0d3ba7977f6b809cdbbbf503ce98f1036016b36efb317e61d7e58a",
+      "at": 1790769841301
+    },
+    {
+      "name": "response.md",
+      "path": "/Users/clemenshoenig/Documents/Codex/2026-09-30/i-w/work/handoff-smoke-v05/runs/781706f1-f409-484b-8615-7fe015c99066/outputs/response.md",
+      "kind": "reply",
+      "bytes": 345,
+      "hash": "146d61aacde1b91c9866c9dd3aab88e124e8d34aa283f0d29b884f5a14a12431",
+      "at": 1790769844105
+    }
+  ],
+  "sources": [],
+  "actions": 2,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 5537,
+    "cache_read_input_tokens": 9843,
+    "output_tokens": 483,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 5537,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "previousRunId": null,
+  "contextKey": "5",
+  "contextUsed": [
+    {
+      "hash": "57baca7881cf08021eed81cfeb0fb464fc25193e7d3ac7edfc48efaa1290fe6e",
+      "id": "887d2e71-297f-4963-ae18-99e001e280ac",
+      "locator": "Handoff · characters 1–76",
+      "part": 0,
+      "parts": 1,
+      "revision": 1,
+      "scope": "project",
+      "sourceRun": "cad6f1d5-3d91-4499-bf51-59f84ffcfc89",
+      "text": "Reviewed handoff reference\nLaunch word: Solstice-621. Delivery day: Friday.\n",
+      "title": "approved.md"
+    }
+  ],
+  "memoriesAdded": [],
+  "freshContext": false,
+  "privateContext": false,
+  "projectId": "10ac8a20-add1-4eaa-ba3c-2af2ee9b32a0",
+  "handoffId": "887d2e71-297f-4963-ae18-99e001e280ac",
+  "handoff": {
+    "brief": "Read all passages of the shared file with handoff_read. Save handoff-check.md containing the launch word and delivery day, citing the filename, handoff ID, hash and locator. Do not browse or add memories.",
+    "createdAt": 1790769832721,
+    "fileName": "approved.md",
+    "hash": "57baca7881cf08021eed81cfeb0fb464fc25193e7d3ac7edfc48efaa1290fe6e",
+    "id": "887d2e71-297f-4963-ae18-99e001e280ac",
+    "projectId": "10ac8a20-add1-4eaa-ba3c-2af2ee9b32a0",
+    "projectName": "Handoff validation",
+    "recipient": "recipient",
+    "sourceAgent": "source",
+    "sourceReviewedAt": 1790769832720,
+    "sourceRun": "cad6f1d5-3d91-4499-bf51-59f84ffcfc89"
+  }
+}

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Worklive (mock backend)</title>
+  </head>
+  <body>
+    <!-- Dev-only page (npm run web → http://127.0.0.1:1432/mock.html). Not part of the app bundle.
+         Runs the real app UI against a simulated Tauri backend, to test flows (hire, edit, chat, browser,
+         take control, tasks) in both office looks without the native app. -->
+    <div id="app"></div>
+    <script type="module" src="/src/dev/mock-backend.ts"></script>
+  </body>
+</html>

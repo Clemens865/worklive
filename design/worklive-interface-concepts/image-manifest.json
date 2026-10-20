@@ -1,0 +1,112 @@
+{
+  "project": "Worklive",
+  "date": "2026-10-01",
+  "status": "Exploratory static interaction concepts. Replaces the conventional dashboard direction rejected by the user; no application changes.",
+  "generation": "Built-in image_gen; final prompts are in interaction-studies-prompts.json",
+  "concepts": [
+    {
+      "id": "01-screen-keys",
+      "title": "Screen Keys",
+      "interaction": "Press an agent's display-key to pull its workspace into focus. Drop a file onto the key to attach context.",
+      "bestFor": "A distinctive home surface that makes switching agents feel immediate.",
+      "tradeoff": "The key is a live thumbnail; reading and interacting happens in the expanded screen.",
+      "image": "01-screen-keys.png",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-dad61f13-daa4-47c8-818a-ec8116a89f92.png"
+    },
+    {
+      "id": "02-screen-landscape",
+      "title": "Screen Landscape",
+      "interaction": "Pull any agent's screen forward to work with it; push it back to restore the overview. Snap two screens together for comparison.",
+      "bestFor": "Seeing actual work while preserving a clear primary focus.",
+      "tradeoff": "Use a fixed camera and flat screen layers; a navigable 3D room would reintroduce the original problem.",
+      "image": "02-screen-landscape.png",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-4792eda9-c045-4a27-8424-86c830e0aa06.png"
+    },
+    {
+      "id": "03-task-pucks",
+      "title": "Task Pucks",
+      "interaction": "Place an agent puck onto a task sheet to assign it, add source cards, then press Start. Lift the puck to inspect its workspace.",
+      "bestFor": "Making assignment, ownership and shared context tangible.",
+      "tradeoff": "Needs accessible keyboard equivalents and clear drop targets.",
+      "image": "03-task-pucks.png",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-c7f4c7fe-aa00-4223-bb96-07b315085220.png"
+    },
+    {
+      "id": "04-agent-cartridges",
+      "title": "Agent Cartridges",
+      "interaction": "Each agent is a persistent cartridge. Insert it into a project dock, attach context chips, and open its display to inspect work.",
+      "bestFor": "Making agent identity, reusable roles and project scope easy to understand.",
+      "tradeoff": "The metaphor must remain a shortcut to clear controls, rather than add extra steps.",
+      "image": "04-agent-cartridges.png",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-7603e1b6-0da3-4c8e-a377-04fa920a6253.png"
+    },
+    {
+      "id": "05-focus-orbit",
+      "title": "Focus Orbit",
+      "interaction": "Choose an agent on the ring to bring its work into the center. Place files and memory tokens on the inner ring to prepare context, then start explicitly.",
+      "bestFor": "One focused workspace with the entire team a single gesture away.",
+      "tradeoff": "Keep the ring stationary unless the user moves it; constant orbiting would be distracting.",
+      "image": "05-focus-orbit.png",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-66a2f230-2c26-4f9e-ae07-dac3a7ee0dfc.png"
+    },
+    {
+      "id": "06-work-ribbons",
+      "title": "Work Ribbons",
+      "interaction": "Pull out an agent's ribbon of work to inspect sources, browser captures and results. Open any frame at full size and review a result before passing it on.",
+      "bestFor": "Understanding a result's history without reading a long log.",
+      "tradeoff": "Store selected events and captures with clear timestamps, not continuous video.",
+      "image": "06-work-ribbons.png",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-e11aa254-bc0f-48ad-ae58-b10f3be9c3a9.png"
+    }
+  ],
+  "superseded": [
+    {
+      "id": "01-agent-deck",
+      "title": "Agent Deck",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-675983a3-43f1-42fa-b290-81fc32a65b7a.png",
+      "image": "superseded-dashboard-studies/01-agent-deck.png"
+    },
+    {
+      "id": "02-screen-wall",
+      "title": "Screen Wall",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-3449dd7c-08d2-4da2-b3fe-0230c4b1ace2.png",
+      "image": "superseded-dashboard-studies/02-screen-wall.png"
+    },
+    {
+      "id": "03-workbench",
+      "title": "Shared Workbench",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-08f5894f-5e32-4f9d-914a-c84f69f128be.png",
+      "image": "superseded-dashboard-studies/03-workbench.png"
+    },
+    {
+      "id": "04-attention-inbox",
+      "title": "Attention Inbox",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-0e503531-b02e-4bdf-a3b3-174fa3bb5690.png",
+      "image": "superseded-dashboard-studies/04-attention-inbox.png"
+    },
+    {
+      "id": "05-project-map",
+      "title": "Project Map",
+      "generated_source": null,
+      "image": "superseded-dashboard-studies/05-project-map.png"
+    },
+    {
+      "id": "06-work-timeline",
+      "title": "Work Timeline",
+      "generated_source": null,
+      "image": "superseded-dashboard-studies/06-work-timeline.png"
+    },
+    {
+      "id": "07-agent-mixer",
+      "title": "Agent Mixer",
+      "generated_source": null,
+      "image": "superseded-dashboard-studies/07-agent-mixer.png"
+    },
+    {
+      "id": "08-project-book",
+      "title": "Project Book",
+      "generated_source": null,
+      "image": "superseded-dashboard-studies/08-project-book.png"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "project": "Worklive",
+  "direction": "Screen Landscape",
+  "status": "Ten static design studies based on inspected source; not an implemented app",
+  "reference": "/Users/clemenshoenig/Documents/Codex/2026-09-30/i-w/outputs/worklive-interface-concepts/02-screen-landscape.png",
+  "screens": [
+    {
+      "id": "01-team-overview",
+      "title": "Team overview",
+      "image": "01-team-overview.png",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-3f9591f3-77e7-43db-a49a-c972443ea171.png",
+      "purpose": "See the whole team and know who needs attention."
+    },
+    {
+      "id": "02-agent-workspace",
+      "title": "Agent workspace",
+      "image": "02-agent-workspace.png",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-05cc60e6-52c2-4bfa-ab10-3ca0c0120520.png",
+      "purpose": "Observe or control the exact browser an agent uses, alongside its task."
+    },
+    {
+      "id": "03-agent-chat",
+      "title": "Agent chat",
+      "image": "03-agent-chat.png",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-520e4ec2-bed5-40f0-8d2c-e3b1713dc80e.png",
+      "purpose": "Talk to an agent while keeping conversation distinct from work execution."
+    },
+    {
+      "id": "04-menu",
+      "title": "Menu",
+      "image": "04-menu.png",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-4c06e799-c289-4476-81e7-07fecb3ec63e.png",
+      "purpose": "Reach the rest of Worklive without keeping permanent navigation panels open."
+    },
+    {
+      "id": "05-project-space",
+      "title": "Project space",
+      "image": "05-project-space.png",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-a5f6903b-219d-48af-a9cf-13e985ff3870.png",
+      "purpose": "Organize a project brief, assigned team and task progression in one place."
+    },
+    {
+      "id": "06-memory-library",
+      "title": "Memory and files",
+      "image": "06-memory-library.png",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-d6bfe4c9-6b47-459c-ba07-eaa1b982e6ed.png",
+      "purpose": "Make memory scope and file provenance visible before context is used."
+    },
+    {
+      "id": "07-inbox-review",
+      "title": "Inbox and review",
+      "image": "07-inbox-review.png",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-79456dd4-75d3-4daf-afb4-00e66d140998.png",
+      "purpose": "Bring questions, blocked work and finished results to the user's attention."
+    },
+    {
+      "id": "08-reviewed-handoff",
+      "title": "Reviewed handoff",
+      "image": "08-reviewed-handoff.png",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-b91aae84-6687-4056-9f21-e2b9a35c34d2.png",
+      "purpose": "Show exactly which accepted file will become the next agent's input."
+    },
+    {
+      "id": "09-create-agent",
+      "title": "Create agent",
+      "image": "09-create-agent.png",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-7f6834ce-0a35-487f-b313-2b1ea6fca8ce.png",
+      "purpose": "Create a named identity with provider, role and personality, then give it work separately."
+    },
+    {
+      "id": "10-provider-connections",
+      "title": "Connections and first-run setup",
+      "image": "10-provider-connections.png",
+      "generated_source": "/Users/clemenshoenig/.codex/generated_images/01a0f131-643e-7e50-bcc2-d5aeaa797ffa/exec-460f2c26-4015-479b-9f63-ae55e51bba20.png",
+      "purpose": "Make official provider login and recovery understandable without exposing credentials."
+    }
+  ]
+}

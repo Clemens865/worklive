@@ -1,0 +1,71 @@
+{
+  "id": "9b7af8bd-ff5f-4695-b203-bbfb09b6abe5",
+  "agentId": "test-codex",
+  "provider": "codex",
+  "task": "Open https://example.com using the Worklive browser. Read it. Save example-summary.md with a two-sentence summary and its exact source URL. Do not follow further links.",
+  "status": "review",
+  "message": "Ready for review. The result and source evidence are saved locally.",
+  "text": "I’ll read the page again and save revision.md with one sentence and the source URL.\n\nRead the page again and saved [revision.md](/Users/clemenshoenig/Documents/Codex/2026-09-30/i-w/work/cli-smoke-xOdwyP/runs/9b7af8bd-ff5f-4695-b203-bbfb09b6abe5/outputs/revision.md) with one sentence and its exact URL. No further links were followed.",
+  "startedAt": 1790762330087,
+  "endedAt": 1790762356647,
+  "sessionId": "01a0f1bf-334a-7272-ac9b-ebf933cea671",
+  "model": null,
+  "version": "codex-cli 0.159.0",
+  "events": [
+    {
+      "at": 1790762330133,
+      "message": "Codex is working through your subscription."
+    },
+    {
+      "at": 1790762341082,
+      "message": "Opening https://example.com"
+    },
+    {
+      "at": 1790762344987,
+      "message": "Reading the current page"
+    },
+    {
+      "at": 1790762349934,
+      "message": "Saving revision.md"
+    },
+    {
+      "at": 1790762356648,
+      "message": "Ready for review. The result and source evidence are saved locally."
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "revision.md",
+      "path": "/Users/clemenshoenig/Documents/Codex/2026-09-30/i-w/work/cli-smoke-xOdwyP/runs/9b7af8bd-ff5f-4695-b203-bbfb09b6abe5/outputs/revision.md",
+      "bytes": 179,
+      "hash": "030909df15f7a07ea9d410b59bebf22911728614cc2bfa6153642ad0f63347a8",
+      "at": 1790762349935
+    },
+    {
+      "name": "response.md",
+      "path": "/Users/clemenshoenig/Documents/Codex/2026-09-30/i-w/work/cli-smoke-xOdwyP/runs/9b7af8bd-ff5f-4695-b203-bbfb09b6abe5/outputs/response.md",
+      "bytes": 336,
+      "hash": "696a4a9b49857f98a0c2b678fade48ad8ca3600e1b450506c3a51b43ae3a447c",
+      "at": 1790762356647
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://example.com/",
+      "title": "Example Domain",
+      "text": "This domain is for use in documentation examples without needing permission. This is not a service, avoid relying on it for testing and monitoring purposes.\n\nهذا النطاق مُخصص للاستخدام في أمثلة التوثيق دون الحاجة إلى إذن. هذه ليست خدمة، يُرجى تجنب الاعتماد عليها لأغراض الاختبار والمراقبة.\n\n该域名仅用于文档示例，无需获得许可。这并非一项服务，请勿将其用于测试和监控目的。\n\nL’usage de ce domaine est réservé à des exemples de documentation, sans autorisation préalable. Il ne s’agit pas d’un service ; son utilisation à des fins de test ou de surveillance est à éviter.\n\nДанный домен предназначен для использования в примерах документации без необходимости получения предварительного разрешения. Это не сервис; не рекомендуется его использование для тестирования и мониторинга.\n\nEste dominio está destinado al uso en ejemplos de documentación sin necesidad de permiso. Esto no es un servicio, evitar utilizarlo para realizar pruebas o monitoreos.\n\nLearn more",
+      "retrievedAt": "2026-09-30T09:59:01.383Z",
+      "truncated": false,
+      "hash": "0093ff74cfb258dade9c4fd23e0e8f9899d96ec7909ed55deec9c61a16a28146"
+    }
+  ],
+  "actions": 3,
+  "usage": {
+    "input_tokens": 121179,
+    "cached_input_tokens": 105856,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 558,
+    "reasoning_output_tokens": 0
+  },
+  "previousRunId": "46ef5d95-5fa3-4d8a-84aa-1d28d3a11f8b"
+}

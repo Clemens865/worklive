@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Worklive Office Mock</title>
+<style>
+  :root { --ink:#1f2723; --muted:#6b736e; --panel:rgba(255,255,255,.86); --line:rgba(31,39,35,.12); --accent:#3f6b52; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; background:#e9ebe8; color:var(--ink); font:14px/1.4 -apple-system,BlinkMacSystemFont,"Inter",sans-serif; overflow:hidden; }
+  #stage { position:fixed; inset:0; }
+  #stage canvas { display:block; }
+  .bar { position:fixed; top:16px; left:16px; right:16px; display:flex; gap:12px; align-items:center; flex-wrap:wrap; pointer-events:none; }
+  .bar > * { pointer-events:auto; }
+  .brand { background:var(--panel); backdrop-filter:blur(14px); border:1px solid var(--line); border-radius:14px; padding:10px 14px; }
+  .brand b { display:block; font-size:15px; }
+  .brand small { color:var(--muted); }
+  .seg { display:flex; background:var(--panel); backdrop-filter:blur(14px); border:1px solid var(--line); border-radius:12px; padding:4px; gap:2px; }
+  .seg button { border:0; background:transparent; padding:8px 12px; border-radius:9px; font:inherit; color:var(--muted); cursor:pointer; }
+  .seg button[aria-pressed="true"] { background:#fff; color:var(--ink); box-shadow:0 1px 3px rgba(0,0,0,.12); font-weight:600; }
+  .seg .lbl { padding:8px 6px 8px 8px; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.06em; align-self:center; }
+  .agents { position:fixed; left:16px; bottom:16px; display:flex; gap:8px; flex-wrap:wrap; max-width:calc(100% - 380px); }
+  .chip { display:flex; align-items:center; gap:8px; background:var(--panel); backdrop-filter:blur(14px); border:1px solid var(--line); border-radius:999px; padding:6px 12px 6px 6px; cursor:pointer; font:inherit; color:var(--ink); }
+  .chip[aria-pressed="true"] { outline:2px solid var(--accent); }
+  .chip .av { width:26px; height:26px; border-radius:50%; display:grid; place-items:center; color:#fff; font-weight:700; font-size:11px; }
+  .chip .st { width:8px; height:8px; border-radius:50%; }
+  .chip small { color:var(--muted); }
+  .hint { position:fixed; right:16px; bottom:16px; width:340px; background:var(--panel); backdrop-filter:blur(14px); border:1px solid var(--line); border-radius:14px; padding:12px 14px; color:var(--muted); font-size:12.5px; }
+  .hint b { color:var(--ink); }
+  .legend { display:flex; gap:10px; flex-wrap:wrap; margin-top:8px; }
+  .legend span { display:flex; gap:5px; align-items:center; }
+  .legend i { width:9px; height:9px; border-radius:50%; display:inline-block; }
+  #pov { position:fixed; left:50%; bottom:28px; transform:translateX(-50%); background:rgba(20,24,22,.78); color:#fff; border-radius:14px; padding:12px 18px; display:none; gap:14px; align-items:center; backdrop-filter:blur(10px); }
+  #pov.on { display:flex; }
+  #pov small { color:#b9c2bd; }
+  #pov button { background:#fff; color:#111; border:0; border-radius:8px; padding:6px 10px; font:inherit; cursor:pointer; }
+  #vignette { position:fixed; inset:0; pointer-events:none; opacity:0; transition:opacity .4s; background:radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,.45) 100%); }
+  #vignette.on { opacity:1; }
+  #loading { position:fixed; inset:0; display:grid; place-items:center; background:#e9ebe8; z-index:5; font-size:15px; color:var(--muted); }
+  .toast { position:fixed; top:84px; left:50%; transform:translateX(-50%); background:#fffaf2; border:3px solid #1f2430; border-radius:14px; box-shadow:0 4px 0 #1f2430; padding:10px 18px; font-weight:700; z-index:15; }
+  @media (max-width:760px){ .hint{display:none} .agents{max-width:none; right:16px} }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.185.1/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="stage"></div>
+<div id="vignette"></div>
+<div class="bar">
+  <div class="brand"><b>Worklive · office mock</b><small>Visual direction test — not the app</small></div>
+  <div class="seg" id="style-seg"><span class="lbl">Style</span>
+    <button data-style="game">Game</button>
+    <button data-style="comic">Comic</button>
+    <button data-style="classic">Classic</button>
+  </div>
+  <button class="brand" id="hire-btn" style="cursor:pointer;font:inherit;font-weight:700;color:var(--ink)">＋ Hire</button>
+  <div class="seg" id="cam-seg"><span class="lbl">Camera</span>
+    <button data-cam="overview" aria-pressed="true">Overview</button>
+    <button data-cam="follow" aria-pressed="false">Follow</button>
+    <button data-cam="pov" aria-pressed="false">Agent's eyes</button>
+    <button data-cam="lineup" aria-pressed="false">Line-up</button>
+  </div>
+</div>
+<div class="agents" id="agents"></div>
+<div class="hint">
+  <b>Drag</b> rotate · <b>right-drag</b> / <b>WASD</b> move · <b>scroll</b> zoom to cursor · <b>click</b> an agent to fly there · <b>double-click</b> an agent to see through their eyes · <b>Esc</b> back.
+  <div class="legend"><span><i style="background:#34c77b"></i>Working</span><span><i style="background:#f5a524"></i>Needs you</span><span><i style="background:#8b6cf0"></i>Review</span><span><i style="background:#a3aaa6"></i>Free</span></div>
+</div>
+<div id="pov"><div><b id="pov-name">Ada</b> <small id="pov-sub"></small></div><small>drag to look around</small><button id="pov-exit">Leave view (Esc)</button></div>
+<div id="loading">Building the office…</div>
+<script type="module" src="./mock.js"></script>
+</body>
+</html>

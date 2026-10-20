@@ -1,0 +1,46 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Worklive",
+  "version": "0.5.0",
+  "identifier": "com.worklive.prototype",
+  "build": {
+    "beforeDevCommand": "npm run web",
+    "devUrl": "http://127.0.0.1:1432",
+    "beforeBuildCommand": "npm run build:web",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Worklive",
+        "width": 1380,
+        "height": 930,
+        "minWidth": 1000,
+        "minHeight": 740,
+        "backgroundColor": "#f6f5f0"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src ipc: http://ipc.localhost; object-src 'none'; frame-src 'none'; base-uri 'self'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "app"
+    ],
+    "category": "Productivity",
+    "shortDescription": "A living workspace for agents",
+    "resources": {
+      "../worker/": "worker/"
+    },
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

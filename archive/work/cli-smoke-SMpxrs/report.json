@@ -1,0 +1,126 @@
+[
+  {
+    "id": "dc69c085-56b8-423c-b176-72bfe5b03f97",
+    "agentId": "test-codex",
+    "provider": "codex",
+    "task": "Open https://example.com using the Worklive browser. Read it. Save example-summary.md with a two-sentence summary and its exact source URL. Do not follow further links.",
+    "status": "review",
+    "message": "Ready for review. The result and source evidence are saved locally.",
+    "text": "I’ll open and read the page, then save a two-sentence summary with its exact URL without following any links.\n\nI couldn’t access the Worklive browser or `save_document` because the tool host is disabled. I haven’t opened the page or saved `example-summary.md`.",
+    "startedAt": 1790762104344,
+    "endedAt": 1790762119006,
+    "sessionId": "01a0f1bd-37e3-79e3-8b71-48c69435f788",
+    "model": null,
+    "version": "codex-cli 0.159.0",
+    "events": [
+      {
+        "at": 1790762104402,
+        "message": "Codex is working through your subscription."
+      },
+      {
+        "at": 1790762119008,
+        "message": "Ready for review. The result and source evidence are saved locally."
+      }
+    ],
+    "artifacts": [
+      {
+        "name": "response.md",
+        "path": "/Users/clemenshoenig/Documents/Codex/2026-09-30/i-w/work/cli-smoke-SMpxrs/runs/dc69c085-56b8-423c-b176-72bfe5b03f97/outputs/response.md",
+        "bytes": 266,
+        "hash": "9bb867d568e3c4a6a63e118d8271a6fcbb9bb2438855b58ec2d277b2d4b0216e",
+        "at": 1790762119007
+      }
+    ],
+    "sources": [],
+    "actions": 0,
+    "usage": {
+      "input_tokens": 20806,
+      "cached_input_tokens": 10240,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 135,
+      "reasoning_output_tokens": 29
+    },
+    "previousRunId": null
+  },
+  {
+    "id": "7016a14e-5e76-4c1e-92f7-4bc44549a244",
+    "agentId": "test-claude",
+    "provider": "claude",
+    "task": "Open https://example.com using the Worklive browser. Read it. Save example-summary.md with a two-sentence summary and its exact source URL. Do not follow further links.",
+    "status": "review",
+    "message": "Ready for review. The result and source evidence are saved locally.",
+    "text": "I opened and read https://example.com in the Worklive browser, then saved `example-summary.md`. It has a two-sentence summary and the exact source URL, `https://example.com/`. The page says the domain is for documentation examples and shouldn't be relied on for testing or monitoring.\n\nAs you asked, I didn't follow the page's \"Learn more\" link.",
+    "startedAt": 1790762104658,
+    "endedAt": 1790762113445,
+    "sessionId": "1609e7af-fec5-4385-91d1-bd08119c6608",
+    "model": "claude-opus-5-5",
+    "version": "2.1.285 (Claude Code)",
+    "events": [
+      {
+        "at": 1790762104973,
+        "message": "Claude Code is working through your subscription."
+      },
+      {
+        "at": 1790762107777,
+        "message": "Opening https://example.com"
+      },
+      {
+        "at": 1790762111146,
+        "message": "Saving example-summary.md"
+      },
+      {
+        "at": 1790762113446,
+        "message": "Ready for review. The result and source evidence are saved locally."
+      }
+    ],
+    "artifacts": [
+      {
+        "name": "example-summary.md",
+        "path": "/Users/clemenshoenig/Documents/Codex/2026-09-30/i-w/work/cli-smoke-SMpxrs/runs/7016a14e-5e76-4c1e-92f7-4bc44549a244/outputs/example-summary.md",
+        "bytes": 421,
+        "hash": "267f8c305e453c81e191469200534a3cf468e8686a86862107a2ff5604665a79",
+        "at": 1790762111149
+      },
+      {
+        "name": "response.md",
+        "path": "/Users/clemenshoenig/Documents/Codex/2026-09-30/i-w/work/cli-smoke-SMpxrs/runs/7016a14e-5e76-4c1e-92f7-4bc44549a244/outputs/response.md",
+        "bytes": 345,
+        "hash": "974b9f5e80e89b141dc42b8333265b91f9557714f824a6aea87434d5dfea1390",
+        "at": 1790762113446
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://example.com/",
+        "title": "Example Domain",
+        "retrievedAt": "2026-09-30T09:55:08.064Z",
+        "truncated": false,
+        "hash": "0093ff74cfb258dade9c4fd23e0e8f9899d96ec7909ed55deec9c61a16a28146"
+      }
+    ],
+    "actions": 2,
+    "usage": {
+      "input_tokens": 6,
+      "cache_creation_input_tokens": 4198,
+      "cache_read_input_tokens": 6958,
+      "output_tokens": 395,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 4198,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "previousRunId": null
+  }
+]

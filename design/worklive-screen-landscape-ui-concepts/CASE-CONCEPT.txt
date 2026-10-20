@@ -1,0 +1,120 @@
+WORKLIVE — CASES IN THE SCREEN LANDSCAPE
+Design proposal · 2026-10-01 · No application implementation
+
+Use the latest Screen Landscape studies as the visual direction. The new image
+11-case-capsule.png shows a case opened beside its agent screen. All names,
+counts, timestamps and contents in that image are illustrative.
+
+THE PRODUCT MODEL
+
+An agent is who works. A case is the persistent body of work. A project groups
+related cases; a case can also stand alone. Tasks define actions within a case;
+runs are individual attempts, continuations or revisions. Cases retain their
+identity when an agent is idle, reassigned or replaced, or a provider changes.
+Changing provider preserves authorized case material, not a CLI session.
+
+When the user starts a new goal, Worklive itself should create the case and link
+the first task/run before starting the official CLI. This should be enforced by
+the host, without requiring the model to remember to create a case. Answers,
+retries and revisions continue the existing case. Unrelated goals create a new
+one. Use stable IDs; matching titles alone must not merge unrelated work.
+
+THE INTERACTION
+
+1. Agent overview: retain the thin floating screens and fixed provider colors.
+   Beneath each agent name grip, add a small case tab with the current case title.
+   Clicking the screen opens live work; clicking its case tab opens the capsule.
+
+2. Cases overview: an Agents / Cases toggle changes the same landscape into a
+   shelf of shallow folios. Search and project/status filters find older work.
+   Keep this a legible, paged collection, not an ever-growing rendered world.
+
+3. Open case: bring a neutral-colored folio forward. Nearby agent screens remain
+   available. Its Overview shows the goal, current result, decisions, assigned
+   participants and the next action requiring the user's attention. Other tabs:
+   - Files: uploaded context, generated artifacts and versions; preview/open.
+   - Sources: URLs, capture times and the actual text captured during research.
+   - Conversation: task brief, user/agent exchanges, questions and answers.
+   - History: timestamped runs, revisions, decisions, reviews and handoffs.
+   The case belongs to the work, so it has no Codex/Claude ownership color.
+
+4. In-case conversation: visibly show the case title in the composer. Keep general
+   personal-agent chat separate; explicitly attach relevant messages when turning
+   a conversation into a task. Reading a case never starts work. Continue requires
+   manual start, current authorization and available provider capacity.
+
+5. Review remains explicit. A completed run is ready for review, not accepted.
+   Open the actual deliverable before acceptance. Handoffs retain the existing
+   one-reviewed-file approval; a case is not a shortcut to sharing its contents.
+
+WHAT TO RETAIN
+
+Preserve the brief and revisions, uploaded input snapshots, managed output files
+and versions, source captures, user-visible case conversations, activity and run
+links, provider/agent attribution, questions, decisions, review results and the
+exact authorized context references used for each run. Every entry needs an ID,
+timestamp and author (user, agent or system). Distinguish recorded events from
+agent claims. Keep superseded versions identifiable.
+
+For future general file editing, use a managed case working directory and record
+created/changed deliverables there. Existing save-document tools can register
+their artifacts directly. Do not claim to capture arbitrary files anywhere on
+the computer. A source-text snapshot is not a full website archive; a preview is
+not a recording of all browser activity.
+
+The complete local archive and the context sent to a CLI are different sizes.
+Supply a concise case brief, decisions and an authorized material index; retrieve
+relevant contents as needed. Do not inject the whole case into every prompt.
+
+CASES AND MEMORY
+
+Cases retain evidence and the history of a particular goal. Personal, project and
+company memory hold reusable knowledge. Offer a deliberate Save to memory action
+with provenance back to the case. Company contributions keep the existing review
+and publication workflow. Do not silently promote every conversation into memory.
+
+The owner can organize the whole case; each agent sees only authorized material.
+Rust remains the enforcement boundary for personal/project/company/task access.
+Membership in a case cannot grant access to another agent's private context or
+to all handoff history. Export must respect the selected authorized contents.
+
+WHAT THE SOURCE INSPECTION SHOWED
+
+Workspace OS: src/main/cases.ts defines a readable Markdown case with a stable
+subject, description/status, artifact paths and timestamped authored notes.
+src/main/agent/capabilityCatalog.ts tells agents to open/continue a case on every
+run and attach outputs/write useful notes. caseActions.ts supplies case Markdown
+to a task; FullCaseView.tsx offers overview, timeline and artifacts. This is a
+strong reusable product concept. It is not evidence that every chat and file's
+bytes are already embedded in a single portable Markdown capsule.
+
+Worklive: runs already retain artifacts, source captures, context references and
+previous-run links. Project tasks, task files, scoped memory and reviewed handoffs
+provide much of the underlying structure. There is no persistent Case entity.
+worker/chat.mjs keeps the latest 60 per-agent messages; agent-runtime.mjs bounds
+events to 120 and text to 100,000 characters. These records cannot establish a
+complete long-term case transcript.
+
+IMPLEMENTATION DIRECTION — PROPOSED
+
+Add cases and case-to-task/run/material links in the existing local store, with
+Rust access checks. Record case messages and important activity durably before
+truncating any display buffer. Keep existing run directories intact and reference
+their managed artifacts; store new case-specific attachments with stable IDs and
+version hashes. The canonical store should produce a readable case.md index and
+an export containing the selected files, sources, conversation and history.
+Avoid two independently editable authoritative stores.
+
+Back up user data before migration. Group historical continuation chains only
+where existing links establish the relationship; do not merge by title. Mark old
+cases as partial records when earlier messages/events were already discarded.
+No migration can reconstruct missing history honestly.
+
+First implement durable capture and reopening, then the case tab and open folio,
+then case search and export. Validate restart/retry/revision continuity, artifact
+versions, access isolation, provider switches and export completeness. Continue
+using only official subscription CLIs. Keep existing concurrency limits.
+
+The spatial presentation can be prototyped with shallow DOM/CSS layers and
+bounded preview updates. The static image proves neither rendering performance
+nor implemented functionality. App source and Claude's current work are unchanged.

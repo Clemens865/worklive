@@ -1,0 +1,43 @@
+{
+  "id": "dc69c085-56b8-423c-b176-72bfe5b03f97",
+  "agentId": "test-codex",
+  "provider": "codex",
+  "task": "Open https://example.com using the Worklive browser. Read it. Save example-summary.md with a two-sentence summary and its exact source URL. Do not follow further links.",
+  "status": "review",
+  "message": "Ready for review. The result and source evidence are saved locally.",
+  "text": "I’ll open and read the page, then save a two-sentence summary with its exact URL without following any links.\n\nI couldn’t access the Worklive browser or `save_document` because the tool host is disabled. I haven’t opened the page or saved `example-summary.md`.",
+  "startedAt": 1790762104344,
+  "endedAt": 1790762119006,
+  "sessionId": "01a0f1bd-37e3-79e3-8b71-48c69435f788",
+  "model": null,
+  "version": "codex-cli 0.159.0",
+  "events": [
+    {
+      "at": 1790762104402,
+      "message": "Codex is working through your subscription."
+    },
+    {
+      "at": 1790762119008,
+      "message": "Ready for review. The result and source evidence are saved locally."
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "response.md",
+      "path": "/Users/clemenshoenig/Documents/Codex/2026-09-30/i-w/work/cli-smoke-SMpxrs/runs/dc69c085-56b8-423c-b176-72bfe5b03f97/outputs/response.md",
+      "bytes": 266,
+      "hash": "9bb867d568e3c4a6a63e118d8271a6fcbb9bb2438855b58ec2d277b2d4b0216e",
+      "at": 1790762119007
+    }
+  ],
+  "sources": [],
+  "actions": 0,
+  "usage": {
+    "input_tokens": 20806,
+    "cached_input_tokens": 10240,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 135,
+    "reasoning_output_tokens": 29
+  },
+  "previousRunId": null
+}

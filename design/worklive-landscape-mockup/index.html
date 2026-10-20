@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#e4ebed">
+  <title>Worklive — a little space for great work</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="landscape" aria-hidden="true"></div><div class="floor" aria-hidden="true"></div>
+  <div id="environment">
+    <header class="masthead">
+      <div><a href="#agents" class="wordmark" aria-label="Worklive home"><span class="brand-orbit"></span> WORKLIVE</a><div class="heading-row"><h1 id="page-title">Your team.</h1><span class="count-label" id="page-count"></span></div><p class="subtitle" id="page-subtitle">A little space for great work.</p></div>
+      <div class="top-actions"><span class="demo-tag"><span></span> Interactive prototype</span><button class="icon-button" data-action="search" aria-label="Search cases and agents" title="Search (⌘K)"></button><button class="user-button" data-action="navigate" data-view="menu" aria-label="Open menu">C</button></div>
+    </header>
+    <div class="view-toolbar"><div class="segmented" id="view-switch"><button data-action="navigate" data-view="agents" class="selected">Agents</button><button data-action="navigate" data-view="cases">Cases</button></div><div class="toolbar-right"><label class="filter-label"><span class="sr-only">Filter by project</span><select id="project-filter"><option value="all">All projects</option><option value="Website launch">Website launch</option><option value="Worklive">Worklive</option></select></label><button class="text-button" data-action="new-agent" id="add-button">＋ Add agent</button></div></div>
+    <main id="world"><div id="scene"></div></main>
+    <div class="scene-bottom"><div id="scene-description">Different minds. One shared horizon.</div><div id="pager"></div><span class="keyboard-hint"><kbd>↵</kbd> Open <span>·</span> <kbd>esc</kbd> Return</span></div>
+    <nav class="dock" aria-label="Main navigation"></nav>
+    <footer><span>SCREEN LANDSCAPE <span class="footer-dot">·</span> 01</span><span>Local demo <span class="footer-dot">·</span> Agent activity is simulated</span></footer>
+  </div>
+  <section id="focus-shell" hidden role="dialog" aria-modal="true" aria-labelledby="focus-title"><button class="focus-back" data-action="close-focus">← Back to landscape <kbd>esc</kbd></button><div id="focus-card" tabindex="-1"></div></section>
+  <dialog id="modal" aria-labelledby="modal-title"></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <input id="file-input" type="file" multiple hidden>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

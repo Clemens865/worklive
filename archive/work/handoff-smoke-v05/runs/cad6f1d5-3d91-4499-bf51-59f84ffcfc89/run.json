@@ -1,0 +1,37 @@
+{
+  "id": "cad6f1d5-3d91-4499-bf51-59f84ffcfc89",
+  "agentId": "source",
+  "provider": "codex",
+  "task": "Synthetic source fixture",
+  "status": "review",
+  "message": "Fixture",
+  "text": "",
+  "startedAt": 1790769832717,
+  "endedAt": 1790769832717,
+  "sessionId": null,
+  "model": null,
+  "version": null,
+  "events": [],
+  "artifacts": [
+    {
+      "name": "approved.md",
+      "path": "/Users/clemenshoenig/Documents/Codex/2026-09-30/i-w/work/handoff-smoke-v05/runs/cad6f1d5-3d91-4499-bf51-59f84ffcfc89/outputs/approved.md",
+      "kind": "deliverable",
+      "bytes": 76,
+      "hash": "57baca7881cf08021eed81cfeb0fb464fc25193e7d3ac7edfc48efaa1290fe6e",
+      "at": 1790769832718
+    }
+  ],
+  "sources": [],
+  "actions": 0,
+  "usage": null,
+  "previousRunId": null,
+  "contextKey": null,
+  "contextUsed": [],
+  "memoriesAdded": [],
+  "freshContext": false,
+  "privateContext": false,
+  "projectId": "",
+  "handoffId": null,
+  "handoff": null
+}

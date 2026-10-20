@@ -1,0 +1,72 @@
+[
+  {
+    "id": "b0dec390-7eb2-4ba5-90c2-5c897272b275",
+    "agentId": "test-codex",
+    "provider": "codex",
+    "task": "Open https://example.com using the Worklive browser. Read it. Save example-summary.md with a two-sentence summary and its exact source URL. Do not follow further links.",
+    "status": "review",
+    "message": "Ready for review. The result and source evidence are saved locally.",
+    "text": "I’ll open and read the page, then save a two-sentence summary with its exact URL without following any links.\n\nRead the page and saved [example-summary.md](/Users/clemenshoenig/Documents/Codex/2026-09-30/i-w/work/cli-smoke-xOdwyP/runs/b0dec390-7eb2-4ba5-90c2-5c897272b275/outputs/example-summary.md) with a two-sentence summary and exact source URL. No further links were followed.",
+    "startedAt": 1790762234557,
+    "endedAt": 1790762264352,
+    "sessionId": "01a0f1bf-334a-7272-ac9b-ebf933cea671",
+    "model": null,
+    "version": "codex-cli 0.159.0",
+    "events": [
+      {
+        "at": 1790762234623,
+        "message": "Codex is working through your subscription."
+      },
+      {
+        "at": 1790762248292,
+        "message": "Opening https://example.com"
+      },
+      {
+        "at": 1790762251136,
+        "message": "Reading the current page"
+      },
+      {
+        "at": 1790762257168,
+        "message": "Saving example-summary.md"
+      },
+      {
+        "at": 1790762264354,
+        "message": "Ready for review. The result and source evidence are saved locally."
+      }
+    ],
+    "artifacts": [
+      {
+        "name": "example-summary.md",
+        "path": "/Users/clemenshoenig/Documents/Codex/2026-09-30/i-w/work/cli-smoke-xOdwyP/runs/b0dec390-7eb2-4ba5-90c2-5c897272b275/outputs/example-summary.md",
+        "bytes": 232,
+        "hash": "904e373514915fed7e5c1dfc0f227a015d5a2c1421258d7503cd49f89b2f61fc",
+        "at": 1790762257170
+      },
+      {
+        "name": "response.md",
+        "path": "/Users/clemenshoenig/Documents/Codex/2026-09-30/i-w/work/cli-smoke-xOdwyP/runs/b0dec390-7eb2-4ba5-90c2-5c897272b275/outputs/response.md",
+        "bytes": 383,
+        "hash": "e0b1790fb3bde85f9d80d3cb2979ab965d0d2cf870fcea19288e96e4c07821a4",
+        "at": 1790762264353
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://example.com/",
+        "title": "Example Domain",
+        "retrievedAt": "2026-09-30T09:57:28.527Z",
+        "truncated": false,
+        "hash": "0093ff74cfb258dade9c4fd23e0e8f9899d96ec7909ed55deec9c61a16a28146"
+      }
+    ],
+    "actions": 3,
+    "usage": {
+      "input_tokens": 55634,
+      "cached_input_tokens": 43264,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 290,
+      "reasoning_output_tokens": 0
+    },
+    "previousRunId": null
+  }
+]
